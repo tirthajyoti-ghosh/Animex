@@ -10,7 +10,7 @@ import App from './components/App';
 import reducer from './store/reducers/index';
 
 const initialState = {
-  top: [],
+  topAnimes: [],
 };
 
 const store = createStore(reducer, initialState);

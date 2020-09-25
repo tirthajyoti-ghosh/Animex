@@ -1,8 +1,8 @@
 import { ADD_TOP_ANIME } from '../../constants';
 
-const addTopAnime = topAnimes => ({
+const addTopAnimes = topAnimes => ({
   type: ADD_TOP_ANIME,
   topAnimes,
 });
 
-export default addTopAnime;
+export default addTopAnimes;

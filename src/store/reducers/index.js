@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import topAnime from './topAnime';
+import topAnimes from './topAnime';
 
 export default combineReducers({
-  topAnime,
+  topAnimes,
 });

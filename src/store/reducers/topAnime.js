@@ -1,6 +1,6 @@
 import { ADD_TOP_ANIME } from '../../constants';
 
-const topAnime = (state = [], action) => {
+const topAnimes = (state = [], action) => {
   switch (action.type) {
     case ADD_TOP_ANIME:
       return state;
@@ -9,4 +9,4 @@ const topAnime = (state = [], action) => {
   }
 };
 
-export default topAnime;
+export default topAnimes;
