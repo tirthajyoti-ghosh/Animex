@@ -11,6 +11,7 @@ import reducer from './store/reducers/index';
 
 const initialState = {
   topAnimes: [],
+  animeDetails: {},
 };
 
 const store = createStore(reducer, initialState);
