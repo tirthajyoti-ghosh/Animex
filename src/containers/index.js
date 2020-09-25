@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import getTopAnime from '../API/getTopAnime';
 import addTopAnimes from '../store/actions/addTopAnime';
 
@@ -30,6 +31,7 @@ const TopAnimesList = ({ topAnimesAdder, topAnimes }) => {
               <li key={anime.mal_id}>
                 {anime.title}
                 <img src={anime.image_url} alt="" />
+                <Link to={`/anime/${anime.mal_id}`}>More</Link>
               </li>
             )) }
           </ul>
