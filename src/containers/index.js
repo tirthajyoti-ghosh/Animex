@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import getTopAnime from '../API/getTopAnimes';
-import addTopAnimes from '../store/actions/addTopAnime';
+import getTopAnimes from '../API/getTopAnimes';
+import addTopAnimes from '../store/actions/addTopAnimes';
 
 const mapDipatchToProps = dispatch => ({
   topAnimesAdder: animeArray => dispatch(addTopAnimes(animeArray)),
@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 
 const TopAnimesList = ({ topAnimesAdder, topAnimes }) => {
   useEffect(() => {
-    getTopAnime()
+    getTopAnimes()
       .then(
         animeArray => {
           topAnimesAdder(animeArray);
