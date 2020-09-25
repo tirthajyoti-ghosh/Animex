@@ -4,7 +4,7 @@ import '../styles/App.css';
 function App() {
   return (
     <div className="App">
-
+      list of all top anime
     </div>
   );
 }
