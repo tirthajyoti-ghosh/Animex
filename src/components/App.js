@@ -1,17 +1,14 @@
 import React from 'react';
 import '../styles/App.css';
-import getTopAnime from '../API/getTopAnime';
+import TopAnimesList from '../containers/index';
 
 function App() {
   return (
     <div className="App">
       list of top anime
+      <TopAnimesList />
     </div>
   );
 }
-
-getTopAnime().then(result => {
-  console.log(result);
-});
 
 export default App;

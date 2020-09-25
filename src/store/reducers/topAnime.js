@@ -3,7 +3,7 @@ import { ADD_TOP_ANIME } from '../../constants';
 const topAnimes = (state = [], action) => {
   switch (action.type) {
     case ADD_TOP_ANIME:
-      return state;
+      return action.topAnimes;
     default:
       return state;
   }
