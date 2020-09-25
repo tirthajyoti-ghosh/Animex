@@ -20,7 +20,7 @@ const TopAnimesList = ({ topAnimesAdder, topAnimes }) => {
           topAnimesAdder(animeArray);
         },
       );
-  }, [topAnimesAdder]);
+  }, []);
 
   return (
     <>
