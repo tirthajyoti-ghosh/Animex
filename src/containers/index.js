@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import getTopAnime from '../API/getTopAnime';
+import getTopAnime from '../API/getTopAnimes';
 import addTopAnimes from '../store/actions/addTopAnime';
 
 const mapDipatchToProps = dispatch => ({

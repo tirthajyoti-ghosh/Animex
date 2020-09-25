@@ -23,23 +23,23 @@ const TopAnimesList = ({ animeDetailsAdder, animeDetails, match }) => {
       );
   }, [animeId]);
 
-  // return (
-  //   <>
-  //     {
-  //       topAnimes.length === 0 ? <p>Loading...</p> : (
-  //         <ul>
-  //           { topAnimes.map(anime => (
-  //             <li key={anime.mal_id}>
-  //               {anime.title}
-  //               <img src={anime.image_url} alt="" />
-  //               <Link to={`/anime/${anime.mal_id}`}>More</Link>
-  //             </li>
-  //           )) }
-  //         </ul>
-  //       )
-  //     }
-  //   </>
-  // );
+  return (
+    <>
+      {
+        topAnimes.length === 0 ? <p>Loading...</p> : (
+          <ul>
+            { topAnimes.map(anime => (
+              <li key={anime.mal_id}>
+                {anime.title}
+                <img src={anime.image_url} alt="" />
+                <Link to={`/anime/${anime.mal_id}`}>More</Link>
+              </li>
+            )) }
+          </ul>
+        )
+      }
+    </>
+  );
 };
 
 export default connect(
