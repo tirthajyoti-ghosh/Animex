@@ -1,6 +1,6 @@
 import { ANIME_LIST_URL } from '../constants';
 
-const getTopAnimes = () => fetch(ANIME_LIST_URL)
+const getAnimesList = () => fetch(ANIME_LIST_URL)
   .then(
     response => response.json(),
   )
@@ -8,4 +8,4 @@ const getTopAnimes = () => fetch(ANIME_LIST_URL)
     response => response.results,
   );
 
-export default getTopAnimes;
+export default getAnimesList;

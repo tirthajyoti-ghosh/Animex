@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Filter = ({ handleFilterChange }) => (
-  <select onChange={e => { handleFilterChange(e.target.value); }}>
+const Filter = ({ handleFilterChange, animeType }) => (
+  <select value={animeType} onChange={e => { handleFilterChange(e.target.value); }}>
     <option value="All" key="All">All</option>
     <option value="TV" key="TV">TV</option>
     <option value="OVA" key="OVA">OVA</option>

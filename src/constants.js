@@ -6,3 +6,4 @@ export const ANIME_DETAILS_URL = `${BASE_URL}anime/`;
 
 export const ADD_ANIME_LIST = 'ADD_ANIME_LIST';
 export const ADD_ANIME_DETAILS = 'ADD_ANIME_DETAILS';
+export const CHANGE_ANIME_TYPE = 'CHANGE_ANIME_TYPE';

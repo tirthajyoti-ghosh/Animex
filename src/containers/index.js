@@ -3,17 +3,20 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getAnimeList from '../API/getAnimeList';
 import addAnimeList from '../store/actions/addAnimeList';
+import changeAnimeType from '../store/actions/changeAnimeType';
 import Filter from '../components/Filter';
 
 const mapDipatchToProps = dispatch => ({
   animeListAdder: animeArray => dispatch(addAnimeList(animeArray)),
+  handleFilterChange: animeType => dispatch(changeAnimeType(animeType)),
 });
 
 const mapStateToProps = state => ({
   animeList: state.animeList,
+  animeType: state.animeType,
 });
 
-const TopAnimesList = ({ animeListAdder, animeList }) => {
+const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType  }) => {
   useEffect(() => {
     getAnimeList()
       .then(
@@ -23,17 +26,11 @@ const TopAnimesList = ({ animeListAdder, animeList }) => {
       );
   }, []);
 
-  const [type, setType] = useState('');
-
-  const handleFilterChange = type => (
-    setType(type)
-  );
-
-  const animeArray = type === '' || type === 'All' ? animeList : animeList.filter(anime => anime.type === type);
+  const animeArray = animeType === '' || animeType === 'All' ? animeList : animeList.filter(anime => anime.type === animeType);
 
   return (
     <>
-      <Filter handleFilterChange={handleFilterChange} />
+      <Filter handleFilterChange={handleFilterChange} animeType={animeType} />
       {
         animeList.length === 0 ? <p>Loading...</p> : (
           <ul>
@@ -54,4 +51,4 @@ const TopAnimesList = ({ animeListAdder, animeList }) => {
 export default connect(
   mapStateToProps,
   mapDipatchToProps,
-)(TopAnimesList);
+)(AnimeList);
