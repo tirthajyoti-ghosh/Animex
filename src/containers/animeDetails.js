@@ -5,7 +5,7 @@ import getAnimeDetails from '../API/getAnimeDetails';
 import addAnimeDetails from '../store/actions/addAnimeDetails';
 
 const mapDipatchToProps = dispatch => ({
-  animeDetailsAdder: animeArray => dispatch(addAnimeDetails(animeArray)),
+  animeDetailsAdder: anime => dispatch(addAnimeDetails(anime)),
 });
 
 const mapStateToProps = state => ({
@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 const TopAnimesList = ({ animeDetailsAdder, animeDetails, match }) => {
   const { animeId } = match.params;
   useEffect(() => {
-    getAnimeDetails()
+    getAnimeDetails(animeId)
       .then(
         anime => {
           animeDetailsAdder(anime);
@@ -26,17 +26,47 @@ const TopAnimesList = ({ animeDetailsAdder, animeDetails, match }) => {
   return (
     <>
       {
-        topAnimes.length === 0 ? <p>Loading...</p> : (
-          <ul>
-            { topAnimes.map(anime => (
-              <li key={anime.mal_id}>
-                {anime.title}
-                <img src={anime.image_url} alt="" />
-                <Link to={`/anime/${anime.mal_id}`}>More</Link>
-              </li>
-            )) }
-          </ul>
-        )
+        Object.keys(animeDetails).length === 0
+          ? <p>Loading...</p>
+          : (
+            <>
+              <p>
+                Title:&nbsp;
+                {animeDetails.title}
+              </p>
+              <hr />
+              <p>
+                Type:&nbsp;
+                {animeDetails.type}
+              </p>
+              <hr />
+              <p>
+                Released:&nbsp;
+                {animeDetails.aired.string}
+              </p>
+              <hr />
+              <p>
+                Duration:&nbsp;
+                {animeDetails.duration}
+              </p>
+              <hr />
+              <p>
+                Rating:&nbsp;
+                {animeDetails.rating}
+              </p>
+              <hr />
+              <p>
+                Score:&nbsp;
+                {animeDetails.score}
+              </p>
+              <hr />
+              <p>
+                Synopsis:&nbsp;
+                {animeDetails.synopsis}
+              </p>
+              <hr />
+            </>
+          )
       }
     </>
   );
