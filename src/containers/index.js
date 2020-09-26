@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import getTopAnimes from '../API/getTopAnimes';
+import getAnimeList from '../API/getAnimeList';
 import addAnimeList from '../store/actions/addAnimeList';
 import Filter from '../components/Filter';
 
@@ -15,7 +15,7 @@ const mapStateToProps = state => ({
 
 const TopAnimesList = ({ animeListAdder, animeList }) => {
   useEffect(() => {
-    getTopAnimes()
+    getAnimeList()
       .then(
         animeArray => {
           animeListAdder(animeArray);
@@ -35,7 +35,7 @@ const TopAnimesList = ({ animeListAdder, animeList }) => {
     <>
       <Filter handleFilterChange={handleFilterChange} />
       {
-        animeArray.length === 0 ? <p>Loading...</p> : (
+        animeList.length === 0 ? <p>Loading...</p> : (
           <ul>
             { animeArray.map(anime => (
               <li key={anime.mal_id}>

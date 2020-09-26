@@ -5,7 +5,7 @@ const getTopAnimes = () => fetch(ANIME_LIST_URL)
     response => response.json(),
   )
   .then(
-    response => response.top,
+    response => response.results,
   );
 
 export default getTopAnimes;
