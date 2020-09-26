@@ -2,22 +2,22 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getTopAnimes from '../API/getTopAnimes';
-import addTopAnimes from '../store/actions/addTopAnimes';
+import addAnimeList from '../store/actions/addAnimeList';
 
 const mapDipatchToProps = dispatch => ({
-  topAnimesAdder: animeArray => dispatch(addTopAnimes(animeArray)),
+  animeListAdder: animeArray => dispatch(addAnimeList(animeArray)),
 });
 
 const mapStateToProps = state => ({
-  topAnimes: state.topAnimes,
+  animeList: state.animeList,
 });
 
-const TopAnimesList = ({ topAnimesAdder, topAnimes }) => {
+const TopAnimesList = ({ animeListAdder, animeList }) => {
   useEffect(() => {
     getTopAnimes()
       .then(
         animeArray => {
-          topAnimesAdder(animeArray);
+          animeListAdder(animeArray);
         },
       );
   }, []);
@@ -25,9 +25,9 @@ const TopAnimesList = ({ topAnimesAdder, topAnimes }) => {
   return (
     <>
       {
-        topAnimes.length === 0 ? <p>Loading...</p> : (
+        animeList.length === 0 ? <p>Loading...</p> : (
           <ul>
-            { topAnimes.map(anime => (
+            { animeList.map(anime => (
               <li key={anime.mal_id}>
                 {anime.title}
                 <img src={anime.image_url} alt="" />

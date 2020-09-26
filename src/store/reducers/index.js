@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import topAnimes from './topAnimes';
+import animeList from './animeList';
 import animeDetails from './animeDetails';
 
 export default combineReducers({
-  topAnimes,
+  animeList,
   animeDetails,
 });

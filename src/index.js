@@ -10,7 +10,7 @@ import App from './components/App';
 import reducer from './store/reducers/index';
 
 const initialState = {
-  topAnimes: [],
+  animeList: [],
   animeDetails: {},
 };
 
