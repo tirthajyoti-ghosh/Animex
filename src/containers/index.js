@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getTopAnimes from '../API/getTopAnimes';
 import addAnimeList from '../store/actions/addAnimeList';
+import Filter from '../components/Filter';
 
 const mapDipatchToProps = dispatch => ({
   animeListAdder: animeArray => dispatch(addAnimeList(animeArray)),
@@ -22,12 +23,21 @@ const TopAnimesList = ({ animeListAdder, animeList }) => {
       );
   }, []);
 
+  const [type, setType] = useState('');
+
+  const handleFilterChange = type => (
+    setType(type)
+  );
+
+  const animeArray = type === '' || type === 'All' ? animeList : animeList.filter(anime => anime.type === type);
+
   return (
     <>
+      <Filter handleFilterChange={handleFilterChange} />
       {
-        animeList.length === 0 ? <p>Loading...</p> : (
+        animeArray.length === 0 ? <p>Loading...</p> : (
           <ul>
-            { animeList.map(anime => (
+            { animeArray.map(anime => (
               <li key={anime.mal_id}>
                 {anime.title}
                 <img src={anime.image_url} alt="" />

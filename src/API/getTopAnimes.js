@@ -1,6 +1,6 @@
-import { TOP_ANIME_URL } from '../constants';
+import { ANIME_LIST_URL } from '../constants';
 
-const getTopAnimes = () => fetch(TOP_ANIME_URL)
+const getTopAnimes = () => fetch(ANIME_LIST_URL)
   .then(
     response => response.json(),
   )

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import getAnimeDetails from '../API/getAnimeDetails';
 import addAnimeDetails from '../store/actions/addAnimeDetails';
 
@@ -12,7 +11,7 @@ const mapStateToProps = state => ({
   animeDetails: state.animeDetails,
 });
 
-const TopAnimesList = ({ animeDetailsAdder, animeDetails, match }) => {
+const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
   const { animeId } = match.params;
   useEffect(() => {
     getAnimeDetails(animeId)
@@ -75,4 +74,4 @@ const TopAnimesList = ({ animeDetailsAdder, animeDetails, match }) => {
 export default connect(
   mapStateToProps,
   mapDipatchToProps,
-)(TopAnimesList);
+)(AnimeDetails);
