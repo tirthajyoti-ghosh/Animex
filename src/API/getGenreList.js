@@ -1,6 +1,6 @@
 import { GENRE_SEARCH_URL } from '../constants';
 
-const getGenreList = () => fetch(GENRE_SEARCH_URL)
+const getGenreList = genreId => fetch(`${GENRE_SEARCH_URL}${genreId}`)
   .then(
     response => response.json(),
   )
