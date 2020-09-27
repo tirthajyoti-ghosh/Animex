@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import '../styles/App.css';
+import '../assets/styles/App.sass';
 import AnimeList from '../containers/index';
 import AnimeDetails from '../containers/AnimeDetails';
 import GenreList from '../containers/GenreList';
