@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav>
-    <a href="/"><img src="https://fontmeme.com/permalink/200927/6a5f1c61b9793277131922d39cad14df.png" alt="netflix-font" border="0" /></a>
+    <a href="/"><img className="logo" src="https://fontmeme.com/permalink/200927/7644f67b9ca3547230cb655ba735cc04.png" alt="logo" border="0" /></a>
 
     <ul className="genre-links">
       <li><Link to="/genre/1">Action</Link></li>
@@ -13,7 +13,7 @@ const Navbar = () => (
       <li><Link to="/genre/37">Supernatural</Link></li>
     </ul>
 
-    <ul>
+    <ul className="login-links">
       <li>Sign In</li>
       <li>Sign Up</li>
     </ul>
