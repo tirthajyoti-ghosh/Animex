@@ -24,7 +24,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
   }, [animeId]);
 
   return (
-    <>
+    <main>
       {
         Object.keys(animeDetails).length === 0 ? <Loading /> : (
           <>
@@ -66,7 +66,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
           </>
         )
       }
-    </>
+    </main>
   );
 };
 

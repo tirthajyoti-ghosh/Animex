@@ -40,7 +40,7 @@
             transition: transform 0.3s ease-in-out
           &:hover
             &::before
-              transform: translate(-50%, 0) scaleX(1)          
+              transform: translate(-50%, 0) scaleX(1)
 
     .login-links
       @include flex($justify-content: space-between, $align-items: center)
@@ -51,6 +51,38 @@
         cursor: pointer
         margin-left: 20px 
   
+  main
+    max-width: 1600px
+    margin: 0 auto
+    padding: 50px
+    color: #fff
+
+    .anime-list
+      display: flex
+      flex-wrap: wrap
+
+      .anime
+        display: flex
+        flex-direction: column
+        width: 225px
+        height: 360px
+        margin: 10px
+        margin-top: 10px
+        padding: 10px
+
+        a
+          color: inherit
+          text-decoration: none
+          margin-top: 5px
+          &:hover
+            text-decoration: underline            
+
+        img
+          width: 100%
+          height: 100%
+          object-fit: contain
+
+  // Loading styles and animation
   svg
     width: 3.75em
     transform-origin: center

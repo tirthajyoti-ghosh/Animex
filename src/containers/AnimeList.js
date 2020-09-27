@@ -25,27 +25,26 @@ const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType })
           animeListAdder(animeArray);
         },
       );
-  }, []);
+  }, [animeList]);
 
   const animeArray = animeType === '' || animeType === 'All' ? animeList : animeList.filter(anime => anime.type === animeType);
 
   return (
-    <>
+    <main>
       <Filter handleFilterChange={handleFilterChange} animeType={animeType} />
       {
         animeList.length === 0 ? <Loading /> : (
-          <ul>
+          <div className="anime-list">
             { animeArray.map(anime => (
-              <li key={anime.mal_id}>
-                {anime.title}
+              <div className="anime" key={anime.mal_id}>
                 <img src={anime.image_url} alt="" />
-                <Link to={`/anime/${anime.mal_id}`}>More</Link>
-              </li>
+                <Link to={`/anime/${anime.mal_id}`}>{anime.title}</Link>
+              </div>
             )) }
-          </ul>
+          </div>
         )
       }
-    </>
+    </main>
   );
 };
 

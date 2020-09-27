@@ -26,21 +26,20 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
   }, [genreId]);
 
   return (
-    <>
+    <main>
       {
         genreList.length === 0 ? <Loading /> : (
-          <ul>
+          <div className="anime-list">
             { genreList.map(anime => (
-              <li key={anime.mal_id}>
-                {anime.title}
+              <div className="anime" key={anime.mal_id}>
                 <img src={anime.image_url} alt="" />
-                <Link to={`/anime/${anime.mal_id}`}>More</Link>
-              </li>
+                <Link to={`/anime/${anime.mal_id}`}>{anime.title}</Link>
+              </div>
             )) }
-          </ul>
+          </div>
         )
       }
-    </>
+    </main>
   );
 };
 
