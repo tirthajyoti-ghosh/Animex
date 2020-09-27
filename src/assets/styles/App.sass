@@ -57,6 +57,18 @@
     padding: 50px
     color: #fff
 
+    .genre-name
+      text-transform: capitalize
+      padding: 20px
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        width: 100%
+        height: 2px
+        background-color: #C90018
+
     .anime-list
       display: flex
       flex-wrap: wrap
