@@ -12,15 +12,17 @@ const mapStateToProps = state => ({
   genreList: state.genreList,
 });
 
-const GenreList = ({ genreListAdder, animeList }) => {
+const GenreList = ({ genreListAdder, animeList, match }) => {
+  const { genreId } = match.params;
+
   useEffect(() => {
-    getGenreList()
+    getGenreList(genreId)
       .then(
         animeArray => {
           genreListAdder(animeArray);
         },
       );
-  }, []);
+  }, [genreId]);
 
   return (
     <>
