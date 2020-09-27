@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   genreList: state.genreList,
 });
 
-const GenreList = ({ genreListAdder, animeList, match }) => {
+const GenreList = ({ genreListAdder, genreList, match }) => {
   const { genreId } = match.params;
 
   useEffect(() => {
@@ -27,9 +27,9 @@ const GenreList = ({ genreListAdder, animeList, match }) => {
   return (
     <>
       {
-        animeList.length === 0 ? <p>Loading...</p> : (
+        genreList.length === 0 ? <p>Loading...</p> : (
           <ul>
-            { animeList.map(anime => (
+            { genreList.map(anime => (
               <li key={anime.mal_id}>
                 {anime.title}
                 <img src={anime.image_url} alt="" />

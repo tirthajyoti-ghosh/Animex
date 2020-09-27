@@ -7,5 +7,6 @@ export const ANIME_DETAILS_URL = `${BASE_URL}anime/`;
 export const GENRE_SEARCH_URL = `${BASE_SEARCH_URL}status=airing&order_by=score&genre=`;
 
 export const ADD_ANIME_LIST = 'ADD_ANIME_LIST';
+export const ADD_GENRE_LIST = 'ADD_GENRE_LIST';
 export const ADD_ANIME_DETAILS = 'ADD_ANIME_DETAILS';
 export const CHANGE_ANIME_TYPE = 'CHANGE_ANIME_TYPE';
