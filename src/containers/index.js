@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getAnimeList from '../API/getAnimeList';
@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
   animeType: state.animeType,
 });
 
-const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType  }) => {
+const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType }) => {
   useEffect(() => {
     getAnimeList()
       .then(
