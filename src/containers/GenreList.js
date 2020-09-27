@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getGenreList from '../API/getGenreList';
 import addGenreList from '../store/actions/addGenreList';
+import Loading from '../components/Loading';
 
 const mapDipatchToProps = dispatch => ({
   genreListAdder: animeArray => dispatch(addGenreList(animeArray)),
@@ -27,7 +28,7 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
   return (
     <>
       {
-        genreList.length === 0 ? <p>Loading...</p> : (
+        genreList.length === 0 ? <Loading /> : (
           <ul>
             { genreList.map(anime => (
               <li key={anime.mal_id}>

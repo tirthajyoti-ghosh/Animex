@@ -5,6 +5,7 @@ import getAnimeList from '../API/getAnimeList';
 import addAnimeList from '../store/actions/addAnimeList';
 import changeAnimeType from '../store/actions/changeAnimeType';
 import Filter from '../components/Filter';
+import Loading from '../components/Loading';
 
 const mapDipatchToProps = dispatch => ({
   animeListAdder: animeArray => dispatch(addAnimeList(animeArray)),
@@ -32,7 +33,7 @@ const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType })
     <>
       <Filter handleFilterChange={handleFilterChange} animeType={animeType} />
       {
-        animeList.length === 0 ? <p>Loading...</p> : (
+        animeList.length === 0 ? <Loading /> : (
           <ul>
             { animeArray.map(anime => (
               <li key={anime.mal_id}>
