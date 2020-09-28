@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import getAnimeDetails from '../API/getAnimeDetails';
 import addAnimeDetails from '../store/actions/addAnimeDetails';
 import Loading from '../components/Loading';
@@ -24,11 +24,28 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
       );
   }, [animeDetails.mal_id]);
 
+  const history = useHistory();
+
+  const routeChange = () => {
+    history.goBack();
+  };
+
   return (
     <>
       {
         animeDetails.mal_id !== parseInt(animeId, 10) ? <Loading /> : (
           <main style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.image_url}` }} className="details">
+
+            <button
+              type="button"
+              className="go-back"
+              onClick={() => routeChange()}
+            >
+              <i className="fas fa-angle-left" />
+              {' '}
+              Back
+            </button>
+
             <div className="anime-details">
               <div className="anime__img">
                 <img src={animeDetails.image_url} alt={animeDetails.title} />
