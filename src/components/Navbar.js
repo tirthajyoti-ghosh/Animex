@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <nav>
-    <a href="/"><img className="logo" src="https://fontmeme.com/permalink/200927/7644f67b9ca3547230cb655ba735cc04.png" alt="logo" border="0" /></a>
+    <a className="logo" href="/"><img src="https://fontmeme.com/permalink/200927/7644f67b9ca3547230cb655ba735cc04.png" alt="logo" border="0" /></a>
 
     <ul className="genre-links">
       <li><Link to="/genre/1/Action">Action</Link></li>
