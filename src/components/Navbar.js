@@ -6,11 +6,11 @@ const Navbar = () => (
     <a href="/"><img className="logo" src="https://fontmeme.com/permalink/200927/7644f67b9ca3547230cb655ba735cc04.png" alt="logo" border="0" /></a>
 
     <ul className="genre-links">
-      <li><Link to="/genre/action-1">Action</Link></li>
-      <li><Link to="/genre/comedy-4">Comedy</Link></li>
-      <li><Link to="/genre/romance-22">Romance</Link></li>
-      <li><Link to="/genre/shounen-27">Shounen</Link></li>
-      <li><Link to="/genre/supernatural-37">Supernatural</Link></li>
+      <li><Link to="/genre/1/Action">Action</Link></li>
+      <li><Link to="/genre/4/Comedy">Comedy</Link></li>
+      <li><Link to="/genre/22/Romance">Romance</Link></li>
+      <li><Link to="/genre/27/Shounen">Shounen</Link></li>
+      <li><Link to="/genre/37/Supernatural">Supernatural</Link></li>
     </ul>
 
     <ul className="login-links">

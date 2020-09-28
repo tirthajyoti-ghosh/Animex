@@ -10,7 +10,7 @@ const App = () => (
   <Router>
     <Navbar />
     <Route exact path="/" component={AnimeList} />
-    <Route exact path="/genre/:genreAndId" component={GenreList} />
+    <Route exact path="/genre/:genreId/:genreName" component={GenreList} />
     <Route exact path="/anime/:animeId" component={AnimeDetails} />
   </Router>
 );
