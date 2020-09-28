@@ -51,8 +51,12 @@
         cursor: pointer
         margin-left: 20px 
   
+    @media screen and ( max-width: 1024px )
+      display: none
+
   main
     max-width: 1600px
+    width: 90%
     height: 100%
     margin: 50px auto
     padding: 50px
@@ -107,7 +111,7 @@
 
       .anime__img
         width: 35%
-        @include flex($justify-content: center, $align-items: center)
+        @include flex($justify-content: unset, $align-items: center)
         flex-direction: column
 
         .anime__watch-links
@@ -134,6 +138,15 @@
 
           .trailer
             border: 2px solid #fff
+
+        @media screen and (max-width: 1024px)
+          width: 45%
+
+        @media screen and (max-width: 876px)
+          width: 50%
+          
+        @media screen and (max-width: 768px)
+          width: 100%
 
       .anime-info
         width: 65%
@@ -176,6 +189,19 @@
 
         p
           margin: 20px 0
+
+        @media screen and ( max-width: 1024px )
+          width: 55%
+
+        @media screen and (max-width: 876px)
+          width: 50%
+
+        @media screen and (max-width: 768px)
+          width: 100%
+
+      @media screen and (max-width: 768px)
+        flex-direction: column
+        align-items: center
 
   main.details
     box-shadow: 0px 0px 15px 0px black;
