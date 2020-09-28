@@ -6,7 +6,7 @@
 #root
 
   nav
-    background-color: rgb(27, 27, 27)
+    background-color: #1b1b1b
     @include flex($justify-content: space-between, $align-items: center)
     padding: 20px 150px
     font-size: 17px
@@ -53,7 +53,8 @@
   
   main
     max-width: 1600px
-    margin: 0 auto
+    height: 100%
+    margin: 50px auto
     padding: 50px
     color: #fff
     background-size: cover
@@ -72,7 +73,7 @@
         background-color: #C90018
 
     .anime-list
-      display: flex
+      @include flex($justify-content: center, $align-items: center)      
       flex-wrap: wrap
 
       .anime
@@ -97,16 +98,86 @@
           object-fit: contain
 
     .anime-details
+      font-family: 'Open Sans', sans-serif
       display: flex
       margin-top: 100px
+      line-height: 25px
+      letter-spacing: 2px
+      font-size: 15px
 
       .anime__img
         width: 35%
         @include flex($justify-content: center, $align-items: center)
-        
+        flex-direction: column
+
+        .anime__watch-links
+          @include flex($justify-content: center, $align-items: center)
+          flex-direction: column
+          margin: 30px
+
+          a
+            @include flex($justify-content: unset, $align-items: center)
+            color: #fff
+            padding: 10px
+            margin: 10px 0
+            font-size: 17px
+            text-decoration: none
+            border-radius: 50px
+            width: 210px
+
+            i
+              font-size: 25px
+              margin-right: 7px
+
+          .watch
+            background-color: #C90018
+
+          .trailer
+            border: 2px solid #fff
 
       .anime-info
         width: 65%
+
+        .anime__title
+          font-size: 40px
+
+        .anime__genres
+          margin: 20px 0
+          a
+            text-decoration: none
+            color: #C90018
+            padding: 0 10px
+            font-size: 14px
+            font-weight: 700
+            letter-spacing: 2px
+            border-left: 2px solid #C90018
+
+            &:hover
+              text-decoration: underline
+
+            &:first-child
+              padding-left: 0
+              border: none
+
+        .anime__score
+          display: inline-block
+          border: 2px solid #FECE02
+          margin-bottom: 20px
+          font-size: 18px
+
+          i
+            color: #FECE02
+            padding: 7px
+            border-right: 2px solid #FECE02
+
+          span
+            padding: 7px
+
+        p
+          margin: 20px 0
+
+  main.details
+    box-shadow: 0px 0px 15px 0px black;
 
   // Loading styles and animation
   svg
