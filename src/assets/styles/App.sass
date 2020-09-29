@@ -153,8 +153,7 @@
     margin: 50px auto
     padding: 50px
     color: #fff
-    background-size: cover
-    background-position: center
+    position: relative
 
     .filter-buttons
       margin-left: 25px
@@ -220,6 +219,17 @@
           width: 100%
           height: 100%
           object-fit: contain
+
+    .blurred-background
+      background-size: cover
+      background-position: center
+      position: absolute
+      z-index: -9999
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      filter: blur(8px)
 
     .anime-details
       font-family: 'Open Sans', sans-serif

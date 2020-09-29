@@ -34,7 +34,9 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
     <>
       {
         animeDetails.mal_id !== parseInt(animeId, 10) ? <Loading /> : (
-          <main style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.image_url}` }} className="details">
+          <main className="details">
+
+            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.image_url}` }} />
 
             <button
               type="button"
