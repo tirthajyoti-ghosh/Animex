@@ -3,6 +3,13 @@
   justify-content: $justify-content
   align-items: $align-items
 
+@mixin default-button()
+  cursor: pointer
+  background-color: transparent
+  border: none
+  box-shadow: none
+  outline: none
+
 #root
 
   nav
@@ -86,15 +93,36 @@
     background-size: cover
     background-position: center
 
+    .filter-buttons
+      margin-left: 25px
+      button
+        color: #fff
+        font-size: 12px
+        @include default-button()
+        margin: 10px
+        text-transform: uppercase
+        letter-spacing: 5px
+        line-height: 10px
+      
+      button.active
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          left: -5%
+          bottom: -10px
+          width: 100%
+          height: 2px
+          background-color: #C90018
+
+      @media screen and ( max-width: 1024px )
+        width: fit-content
+        margin: 0 auto
+
     .go-back
-      text-decoration: none
       color: #fff
       font-size: 17px
-      cursor: pointer
-      background-color: transparent
-      border: none
-      box-shadow: none
-      outline: none
+      @include default-button()
 
       @media screen and ( min-width: 876px )
         font-size: 20px

@@ -1,12 +1,12 @@
 import React from 'react';
 
 const Filter = ({ handleFilterChange, animeType }) => (
-  <select value={animeType} onChange={e => { handleFilterChange(e.target.value); }}>
-    <option value="All" key="All">All</option>
-    <option value="TV" key="TV">TV</option>
-    <option value="Movie" key="Movie">Movie</option>
-    <option value="Special" key="Special">Special</option>
-  </select>
+  <div className="filter-buttons">
+    <button className={animeType === 'All' ? 'active' : ''} type="button" onClick={() => { handleFilterChange('All'); }}>All</button>
+    <button className={animeType === 'TV' ? 'active' : ''} type="button" onClick={() => { handleFilterChange('TV'); }}>TV</button>
+    <button className={animeType === 'Movie' ? 'active' : ''} type="button" onClick={() => { handleFilterChange('Movie'); }}>Movie</button>
+    <button className={animeType === 'Special' ? 'active' : ''} type="button" onClick={() => { handleFilterChange('Special'); }}>Special</button>
+  </div>
 );
 
 export default Filter;
