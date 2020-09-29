@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import getAnimeDetails from '../API/getAnimeDetails';
@@ -53,7 +54,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                 <img src={animeDetails.image_url} alt={animeDetails.title} />
 
                 <div className="anime__watch-links">
-                  <a href={animeDetails.url} target="_blank" rel="noreferrer" className="watch">
+                  <a href={animeDetails.url} target="_blank" rel="noopener noreferrer" className="watch">
                     <i className="fas fa-play-circle" />
                     <span>&nbsp; Watch Now</span>
                   </a>
@@ -67,7 +68,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                         </p>
                       )
                       : (
-                        <a href={animeDetails.trailer_url} target="_blank" className="trailer">
+                        <a href={animeDetails.trailer_url} target="_blank" rel="noopener noreferrer" className="trailer">
                           <i className="fas fa-play-circle" />
                           <span>&nbsp; View Trailer</span>
                         </a>
@@ -164,6 +165,31 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
       }
     </>
   );
+};
+
+AnimeDetails.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      animeId: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  animeDetailsAdder: PropTypes.func.isRequired,
+  animeDetails: PropTypes.shape({
+    mal_id: PropTypes.number,
+    image_url: PropTypes.string,
+    url: PropTypes.string,
+    trailer_url: PropTypes.string,
+    title: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.object),
+    score: PropTypes.number,
+    aired: PropTypes.shape({
+      string: PropTypes.string,
+    }),
+    type: PropTypes.string,
+    airing: PropTypes.bool,
+    duration: PropTypes.string,
+    synopsis: PropTypes.string,
+  }).isRequired,
 };
 
 export default connect(

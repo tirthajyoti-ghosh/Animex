@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getGenreList from '../API/getGenreList';
@@ -44,6 +45,21 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
       }
     </main>
   );
+};
+
+GenreList.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      genreId: PropTypes.string.isRequired,
+      genreName: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  genreListAdder: PropTypes.func.isRequired,
+  genreList: PropTypes.arrayOf(PropTypes.shape({
+    mal_id: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
 };
 
 export default connect(

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import getAnimeList from '../API/getAnimeList';
@@ -17,7 +18,9 @@ const mapStateToProps = state => ({
   animeType: state.animeType,
 });
 
-const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType }) => {
+const AnimeList = ({
+  animeListAdder, animeList, handleFilterChange, animeType,
+}) => {
   useEffect(() => {
     getAnimeList()
       .then(
@@ -25,7 +28,7 @@ const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType })
           animeListAdder(animeArray);
         },
       );
-  }, [animeList]);
+  }, []); // adding dependency results in infinite number of network requests
 
   const animeArray = animeType === '' || animeType === 'All' ? animeList : animeList.filter(anime => anime.type === animeType);
 
@@ -46,6 +49,17 @@ const AnimeList = ({ animeListAdder, animeList, handleFilterChange, animeType })
       }
     </main>
   );
+};
+
+AnimeList.propTypes = {
+  animeListAdder: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
+  animeType: PropTypes.string.isRequired,
+  animeList: PropTypes.arrayOf(PropTypes.shape({
+    mal_id: PropTypes.number.isRequired,
+    image_url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired).isRequired,
 };
 
 export default connect(
