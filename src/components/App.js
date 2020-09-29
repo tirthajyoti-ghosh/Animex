@@ -11,7 +11,7 @@ const App = () => (
   <Router>
     <div id="outer-container">
       <Route>
-        <Menu width="30vw" className="mobile-menu" pageWrapId="page-wrap" outerContainerId="outer-container">
+        <Menu width="200px" className="mobile-menu" pageWrapId="page-wrap" outerContainerId="outer-container">
           <Link to="/">Home</Link>
           <Link to="/genre/1/Action">Action</Link>
           <Link to="/genre/4/Comedy">Comedy</Link>
