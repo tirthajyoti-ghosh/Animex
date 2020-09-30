@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import './assets/styles/index.sass';
+import './assets/styles/reset.css';
 import App from './components/App';
 
 import reducer from './store/reducers/index';
