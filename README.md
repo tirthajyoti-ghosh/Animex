@@ -29,8 +29,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tirthajyoti-ghosh/weather-app">
-    <img src="https://user-images.githubusercontent.com/57726348/88449500-02aafb00-ce65-11ea-9a69-1bc31d6d649e.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone">
+    <img src="./public/naruto.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Weather App</h3>
@@ -38,14 +38,14 @@
   <p align="center">
     A weather app that shows weather data by city.
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app">View Demo</a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone">View Demo</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Report Bug</a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Request Feature</a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues">Request Feature</a>
   </p>
 </p>
 
@@ -93,7 +93,7 @@ Data points consumed:
 
 ## Live demo
 
-Deployed to Raw Githack - [live demo](https://rawcdn.githack.com/tirthajyoti-ghosh/weather-app/0b69b93c02b080fa740a2ec65031f403675c142d/dist/index.html).
+Deployed to Raw Githack - [live demo](https://rawcdn.githack.com/tirthajyoti-ghosh/react-redux-capstone/0b69b93c02b080fa740a2ec65031f403675c142d/dist/index.html).
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -113,26 +113,27 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
     ```sh
-    git clone https://github.com/tirthajyoti-ghosh/weather-app.git
+    git clone https://github.com/tirthajyoti-ghosh/react-redux-capstone.git
     ```
 
-2. Install NPM packages
+2. Change directory
+
+    ```sh
+    cd <react-redux-capstone>
+    ```
+
+3. Install NPM packages
 
     ```sh
     npm install
     ```
 
-3. Start local server
+4. Start local server
 
     ```sh
-    npm run dev
+    npm start
     ```
-    
-4. Visit `http://localhost:8080/` in your browser.
 
-   OR
-
-   Navigate to the `/dist` folder and open the `index.html` in your browser.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -146,7 +147,7 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/tirthajyoti-ghosh/weather-app/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -167,30 +168,33 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Tirthajyoti Ghosh - [@terrific_ghosh](https://twitter.com/terrific_ghosh) - itirthahere@gmail.com
+👤 **Tirthajyoti Ghosh**
 
-Project Link: [https://github.com/tirthajyoti-ghosh/weather-app](https://github.com/tirthajyoti-ghosh/weather-app)
+- Website: [tirthajyoti](https://tirthajyoti-ghosh.github.io/Portfolio/)
+- GitHub - [@tirthajyoti-ghosh](https://github.com/tirthajyoti-ghosh)
+- Twitter - [@terrific_ghosh](https://twitter.com/terrific_ghosh)
+- LinkedIn - [linkedin](https://www.linkedin.com/in/tirthajyoti-ghosh/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [OpenWeatherMap](https://openweathermap.org/api)
-* README Icon made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+* https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs
+* https://dribbble.com/shots/5253521-Netflix-Redesign-Idea
+* README Icon from Icons8
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)
-* [Material Design Lite](https://getmdl.io/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[contributors-url]: https://github.com/tirthajyoti-ghosh/weather-app/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[forks-url]: https://github.com/tirthajyoti-ghosh/weather-app/network/members
-[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[stars-url]: https://github.com/tirthajyoti-ghosh/weather-app/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[issues-url]: https://github.com/tirthajyoti-ghosh/weather-app/issues
+[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[contributors-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[forks-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/network/members
+[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[stars-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/stargazers
+[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[issues-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: https://github.com/tirthajyoti-ghosh/weather-app/blob/development/LICENSE
+[license-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/blob/development/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tirthajyoti-ghosh/

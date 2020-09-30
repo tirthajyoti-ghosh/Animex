@@ -16,6 +16,7 @@ const mapStateToProps = state => ({
 
 const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
   const { animeId } = match.params;
+
   useEffect(() => {
     getAnimeDetails(animeId)
       .then(
