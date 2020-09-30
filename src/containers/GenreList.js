@@ -31,7 +31,11 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
       {
         genreList.length === 0 ? <Loading /> : (
           <>
-            <h1 className="genre-name">{genreName}</h1>
+            <h1 className="genre-name">
+              Genre:
+              {' '}
+              {genreName}
+            </h1>
             <div className="anime-list">
               { genreList.map(anime => (
                 <div className="anime" key={anime.mal_id}>
