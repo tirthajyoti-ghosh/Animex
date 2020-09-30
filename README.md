@@ -67,33 +67,34 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Weather App Screenshot](https://user-images.githubusercontent.com/57726348/88449813-ae554a80-ce67-11ea-8500-0e3505daf29a.png)
+![Animex Screenshot](https://user-images.githubusercontent.com/57726348/94736207-7c8dc200-0389-11eb-9606-7cd8c319f5de.png)
+![Animex Screenshot](https://user-images.githubusercontent.com/57726348/94736466-e3ab7680-0389-11eb-95f3-c0ffa5b85074.png)
 
-This is a weather app that shows temperatures (current, feels like, min, max), cloudiness (%), and wind speed (m/s) by city name. The city name is obtained from form input. This app consumes OpenWeather API in the `JSON` format to show weather data.
+This is a Single Page Application (SPA) built with React and Redux for browsing animes. The design of the web app resembles Netflix. The data is fetched from [Jikan API](https://jikan.docs.apiary.io/#).
 
-Data points consumed:
+Routes:
 
-* City name
-* Country code
-* Weather description
-* Weather icon
-* Current temperature
-* Feels like temperature
-* Minimum temperature
-* Maximum temperature
-* Cloudiness
-* Wind speed
+* `/` - home page.
+* `/genre/:genreId/:genreName` - genre page.
+* `/anime/:animeId` - anime details page
 
 ### Built With
 
-* Material Design Lite
-* OpenWeatherMap
-* Webpack
-* ES6
+- React
+- Redux
+- Eslint
+- Stylelint
+- SASS
+- Styled components
+- npm
+- Jikan API
+- React-burger-menu
+- Prop-types
+- [Heroku](https://tg-animex.herokuapp.com/)
 
 ## Live demo
 
-Deployed to Raw Githack - [live demo](https://rawcdn.githack.com/tirthajyoti-ghosh/react-redux-capstone/0b69b93c02b080fa740a2ec65031f403675c142d/dist/index.html).
+Deployed to Heroku - [live demo](https://tg-animex.herokuapp.com/).
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -134,20 +135,10 @@ To get a local copy up and running follow these simple steps.
     npm start
     ```
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-![Usage example](https://user-images.githubusercontent.com/57726348/88450206-d98d6900-ce6a-11ea-9256-f20becd92fe2.jpg)
-
-1. Enter the city name and press the `Enter` key.
-2. Weather data is displayed here.
-3. These are buttons to convert the temperature in their respective units.
-
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues) for a list of proposed features (and known issues).
+* Add search feature
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -178,8 +169,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs
-* https://dribbble.com/shots/5253521-Netflix-Redesign-Idea
+* Design inspirations
+  * https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs
+  * https://dribbble.com/shots/5253521-Netflix-Redesign-Idea
 * README Icon from Icons8
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)

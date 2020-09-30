@@ -7,7 +7,6 @@ describe('animeType', () => {
   });
 
   test('should return a new state', () => {
-
     const testAnimeType = 'TV';
 
     expect(animeType(undefined, changeAnimeType(testAnimeType))).toEqual(testAnimeType);
