@@ -33,10 +33,10 @@
     <img src="./public/naruto.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Weather App</h3>
+  <h3 align="center">Animex</h3>
 
   <p align="center">
-    A weather app that shows weather data by city.
+    Anime browsing wep app created with React/Redux and Jikan API.
     <br />
     <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone"><strong>Explore the docs »</strong></a>
     <br />
