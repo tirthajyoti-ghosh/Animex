@@ -32,9 +32,9 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
         genreList.length === 0 ? <Loading /> : (
           <>
             <h1 className="genre-name">
-              Genre:
-              {' '}
               {genreName}
+              {' '}
+              animes
             </h1>
             <div className="anime-list">
               { genreList.map(anime => (

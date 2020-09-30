@@ -12,7 +12,7 @@ describe('GenreList page', () => {
 
     fireEvent.click(getByTextWithMarkup('Shounen')[0]);
 
-    const result = await screen.findByText('Genre: Shounen');
+    const result = await screen.findByText('Shounen animes');
 
     expect(result).toBeTruthy();
   });
