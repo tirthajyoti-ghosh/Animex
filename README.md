@@ -41,7 +41,7 @@
     <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone">View Demo</a>
+    <a href="https://tg-animex.herokuapp.com/">View Demo</a>
     ·
     <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues">Report Bug</a>
     ·
@@ -57,7 +57,6 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -82,7 +81,7 @@ Routes:
 
 - React
 - Redux
-- Eslint
+- ESLint
 - Stylelint
 - SASS
 - Styled components
@@ -129,7 +128,7 @@ To get a local copy up and running follow these simple steps.
     npm install
     ```
 
-4. Start local server
+4. Start the local server
 
     ```sh
     npm start
@@ -143,7 +142,7 @@ To get a local copy up and running follow these simple steps.
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
