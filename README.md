@@ -29,23 +29,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tirthajyoti-ghosh/weather-app">
-    <img src="https://user-images.githubusercontent.com/57726348/88449500-02aafb00-ce65-11ea-9a69-1bc31d6d649e.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone">
+    <img src="./public/naruto.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Weather App</h3>
+  <h3 align="center">Animex</h3>
 
   <p align="center">
-    A weather app that shows weather data by city.
+    Anime browsing wep app created with React/Redux and Jikan API.
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app">View Demo</a>
+    <a href="https://tg-animex.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Report Bug</a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Request Feature</a>
+    <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues">Request Feature</a>
   </p>
 </p>
 
@@ -57,7 +57,6 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
@@ -67,33 +66,34 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Weather App Screenshot](https://user-images.githubusercontent.com/57726348/88449813-ae554a80-ce67-11ea-8500-0e3505daf29a.png)
+![Animex Screenshot](https://user-images.githubusercontent.com/57726348/94736207-7c8dc200-0389-11eb-9606-7cd8c319f5de.png)
+![Animex Screenshot](https://user-images.githubusercontent.com/57726348/94736466-e3ab7680-0389-11eb-95f3-c0ffa5b85074.png)
 
-This is a weather app that shows temperatures (current, feels like, min, max), cloudiness (%), and wind speed (m/s) by city name. The city name is obtained from form input. This app consumes OpenWeather API in the `JSON` format to show weather data.
+This is a Single Page Application (SPA) built with React and Redux for browsing animes. The design of the web app resembles Netflix. The data is fetched from [Jikan API](https://jikan.docs.apiary.io/#).
 
-Data points consumed:
+Routes:
 
-* City name
-* Country code
-* Weather description
-* Weather icon
-* Current temperature
-* Feels like temperature
-* Minimum temperature
-* Maximum temperature
-* Cloudiness
-* Wind speed
+* `/` - home page.
+* `/genre/:genreId/:genreName` - genre page.
+* `/anime/:animeId` - anime details page
 
 ### Built With
 
-* Material Design Lite
-* OpenWeatherMap
-* Webpack
-* ES6
+- React
+- Redux
+- ESLint
+- Stylelint
+- SASS
+- Styled components
+- npm
+- Jikan API
+- React-burger-menu
+- Prop-types
+- [Heroku](https://tg-animex.herokuapp.com/)
 
 ## Live demo
 
-Deployed to Raw Githack - [live demo](https://rawcdn.githack.com/tirthajyoti-ghosh/weather-app/0b69b93c02b080fa740a2ec65031f403675c142d/dist/index.html).
+Deployed to Heroku - [live demo](https://tg-animex.herokuapp.com/).
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -113,45 +113,36 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
     ```sh
-    git clone https://github.com/tirthajyoti-ghosh/weather-app.git
+    git clone https://github.com/tirthajyoti-ghosh/react-redux-capstone.git
     ```
 
-2. Install NPM packages
+2. Change directory
+
+    ```sh
+    cd <react-redux-capstone>
+    ```
+
+3. Install NPM packages
 
     ```sh
     npm install
     ```
 
-3. Start local server
+4. Start the local server
 
     ```sh
-    npm run dev
+    npm start
     ```
-    
-4. Visit `http://localhost:8080/` in your browser.
-
-   OR
-
-   Navigate to the `/dist` folder and open the `index.html` in your browser.
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-![Usage example](https://user-images.githubusercontent.com/57726348/88450206-d98d6900-ce6a-11ea-9256-f20becd92fe2.jpg)
-
-1. Enter the city name and press the `Enter` key.
-2. Weather data is displayed here.
-3. These are buttons to convert the temperature in their respective units.
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/tirthajyoti-ghosh/weather-app/issues) for a list of proposed features (and known issues).
+* Add search feature
 
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -167,30 +158,34 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Tirthajyoti Ghosh - [@terrific_ghosh](https://twitter.com/terrific_ghosh) - itirthahere@gmail.com
+👤 **Tirthajyoti Ghosh**
 
-Project Link: [https://github.com/tirthajyoti-ghosh/weather-app](https://github.com/tirthajyoti-ghosh/weather-app)
+- Website: [tirthajyoti](https://tirthajyoti-ghosh.github.io/Portfolio/)
+- GitHub - [@tirthajyoti-ghosh](https://github.com/tirthajyoti-ghosh)
+- Twitter - [@terrific_ghosh](https://twitter.com/terrific_ghosh)
+- LinkedIn - [linkedin](https://www.linkedin.com/in/tirthajyoti-ghosh/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [OpenWeatherMap](https://openweathermap.org/api)
-* README Icon made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+* Design inspirations
+  * https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs
+  * https://dribbble.com/shots/5253521-Netflix-Redesign-Idea
+* README Icon from Icons8
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)
-* [Material Design Lite](https://getmdl.io/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[contributors-url]: https://github.com/tirthajyoti-ghosh/weather-app/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[forks-url]: https://github.com/tirthajyoti-ghosh/weather-app/network/members
-[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[stars-url]: https://github.com/tirthajyoti-ghosh/weather-app/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[issues-url]: https://github.com/tirthajyoti-ghosh/weather-app/issues
+[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[contributors-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[forks-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/network/members
+[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[stars-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/stargazers
+[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/react-redux-capstone.svg?style=flat-square
+[issues-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: https://github.com/tirthajyoti-ghosh/weather-app/blob/development/LICENSE
+[license-url]: https://github.com/tirthajyoti-ghosh/react-redux-capstone/blob/development/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tirthajyoti-ghosh/

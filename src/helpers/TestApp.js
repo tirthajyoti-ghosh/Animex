@@ -1,14 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-
-import './assets/styles/index.sass';
-import './assets/styles/reset.css';
-import App from './components/App';
-
-import reducer from './store/reducers/index';
+import App from '../components/App';
+import reducer from '../store/reducers/index';
 
 const initialState = {
   animeList: [],
@@ -19,9 +13,10 @@ const initialState = {
 
 const store = createStore(reducer, initialState);
 
-ReactDOM.render(
+const TestApp = () => (
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root'),
+  </Provider>
 );
+
+export default TestApp;
