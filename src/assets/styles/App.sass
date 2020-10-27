@@ -67,7 +67,6 @@
         @include underline()
         left: 0
         bottom: -5px
-      
 
   nav.desktop-menu
     background-color: #1b1b1b
@@ -153,7 +152,6 @@
     margin: 50px auto
     padding: 50px
     color: #fff
-    position: relative
 
     .filter-buttons
       margin-left: 25px
@@ -345,39 +343,48 @@
       margin-top: 20px
 
   main.details
-    box-shadow: 0px 0px 15px 0px black;
+    box-shadow: 0px 0px 15px 0px black
+    position: relative
 
   // Loading styles and animation
-  svg
-    width: 3.75em
-    transform-origin: center
-    animation: rotate 2s linear infinite
+  .loading
     position: absolute
-    left: 50%
+    z-index: 9999
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background-color: #1B1B1B
 
-  circle
-    fill: none
-    stroke: #fc2f70
-    stroke-width: 2
-    stroke-dasharray: 1, 200
-    stroke-dashoffset: 0
-    stroke-linecap: round
-    animation: dash 1.5s ease-in-out infinite  
+    svg
+      width: 3.75em
+      transform-origin: center
+      animation: rotate 2s linear infinite
+      position: absolute
+      top: calc( 50% - 1.875em )
+      left: calc( 50% - 1.875em )
 
-  @keyframes rotate
-    100%
-      transform: rotate(360deg) 
-
-  @keyframes dash
-    0%
+    circle
+      fill: none
+      stroke: #fc2f70
+      stroke-width: 2
       stroke-dasharray: 1, 200
       stroke-dashoffset: 0
-    
-    50%
-      stroke-dasharray: 90, 200
-      stroke-dashoffset: -35px
-    
-    100%
-      stroke-dashoffset: -125px
-    
-  
+      stroke-linecap: round
+      animation: dash 1.5s ease-in-out infinite  
+
+    @keyframes rotate
+      100%
+        transform: rotate(360deg) 
+
+    @keyframes dash
+      0%
+        stroke-dasharray: 1, 200
+        stroke-dashoffset: 0
+      
+      50%
+        stroke-dasharray: 90, 200
+        stroke-dashoffset: -35px
+      
+      100%
+        stroke-dashoffset: -125px
