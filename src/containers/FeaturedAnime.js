@@ -34,7 +34,7 @@ const FeaturedAnime = ({
             <div className="left">
 
               <header>
-                <span>overview</span>
+                <span className="active">overview</span>
                 <span>details</span>
               </header>
 
@@ -54,8 +54,8 @@ const FeaturedAnime = ({
 
                 <span>{featuredAnime.start_date.split('-')[0]}</span>
                 <span>{featuredAnime.type}</span>
-                <p>{featuredAnime.synopsis}</p>
               </div>
+              <p>{featuredAnime.synopsis}</p>
             </div>
 
             <div className="right">

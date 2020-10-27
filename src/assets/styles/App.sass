@@ -153,6 +153,43 @@
     padding: 50px
     color: #fff
 
+    .featured-anime
+      @include flex($justify-content: center, $align-items: center)
+      height: 60vh
+
+      .left
+        width: 50%
+        height: 100%
+
+        header
+          text-transform: uppercase
+          margin-bottom: 50px
+
+          span
+            padding-right: 10px
+            color: #858687
+            font-size: 12px
+            letter-spacing: 2px
+            line-height: 10px
+
+          span.active
+            color: #fff
+
+        h1
+          font-size: 40px
+          font-weight: lighter
+          letter-spacing: 2px
+          margin-bottom: 30px
+
+        .stats
+          @include flex($justify-content: flex-start, $align-items: center)
+          
+
+      .right
+        width: 50%
+        height: 100%
+        @include flex($justify-content: center, $align-items: center)
+
     .filter-buttons
       margin-left: 25px
       button
