@@ -12,6 +12,7 @@ import reducer from './store/reducers/index';
 
 const initialState = {
   animeList: [],
+  featuredAnime: {},
   genreList: [],
   animeDetails: {},
   animeType: '',
