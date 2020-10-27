@@ -7,6 +7,7 @@ import addAnimeList from '../store/actions/addAnimeList';
 import changeAnimeType from '../store/actions/changeAnimeType';
 import Filter from '../components/Filter';
 import Loading from '../components/Loading';
+import FeaturedAnime from './FeaturedAnime';
 
 const mapDipatchToProps = dispatch => ({
   animeListAdder: animeArray => dispatch(addAnimeList(animeArray)),
@@ -34,6 +35,7 @@ const AnimeList = ({
 
   return (
     <main>
+      <FeaturedAnime />
       <Filter handleFilterChange={handleFilterChange} animeType={animeType} />
       {
         animeList.length === 0 ? <Loading /> : (
