@@ -42,8 +42,9 @@ const AnimeList = ({
           <div className="anime-list">
             { animeArray.map(anime => (
               <div className="anime" key={anime.mal_id}>
+                <Link to={`/anime/${anime.mal_id}`} />
                 <img src={anime.image_url} alt="" />
-                <Link to={`/anime/${anime.mal_id}`}>{anime.title}</Link>
+                <span>{anime.title}</span>
               </div>
             )) }
           </div>
