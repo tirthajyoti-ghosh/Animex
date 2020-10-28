@@ -38,7 +38,7 @@ const FeaturedAnime = ({
 
               <header>
                 <span className="active">overview</span>
-                <span>details</span>
+                <span><Link to={`/anime/${featuredAnime.mal_id}`}>details</Link></span>
               </header>
 
               <h1>{featuredAnime.title}</h1>
