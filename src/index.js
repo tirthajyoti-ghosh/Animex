@@ -14,9 +14,18 @@ const initialState = {
   animeList: [],
   featuredAnime: {},
   genreList: [],
+  genreRow: {},
   animeDetails: {},
   animeType: '',
 };
+
+// genreRow object structure:
+
+// genreRow: {
+//    genre1: [ // genre1 animes ]
+//    genre2: [ // genre2 animes ]
+//    genre3: [ // genre3 animes ]
+// }
 
 const store = createStore(reducer, initialState);
 
