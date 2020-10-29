@@ -99,6 +99,7 @@
 
       li
         margin-left: 20px
+
         a
           color: inherit
           position: relative
@@ -110,21 +111,25 @@
             transform-origin: center
             transform: translate(-50%, 0) scaleX(0)
             transition: transform 0.3s ease-in-out
+
           &:hover
             &::before
               transform: translate(-50%, 0) scaleX(1)
-        
-        @media screen and ( max-width: 1024px )
-          margin-left: 10px
 
-      li.active
-        a
+        a.active
           &::before
             @include underline()
             left: 0
             transform-origin: unset
             transform: unset
             transition: unset
+
+          &:hover
+            &::before
+              transform: unset
+        
+        @media screen and ( max-width: 1024px )
+          margin-left: 10px
 
       @media screen and ( max-width: 768px )
         display: none
