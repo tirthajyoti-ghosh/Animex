@@ -1,11 +1,11 @@
-import { ADD_GENRE_ROW } from "../../constants";
+import { ADD_GENRE_ROW } from '../../constants';
 
 const genreRow = (state = {}, action) => {
   switch (action.type) {
     case ADD_GENRE_ROW:
       return {
         ...state,
-        [action.genre]: action.animeList,
+        [action.genre]: action.animeArray,
       };
 
     default:

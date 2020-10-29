@@ -1,9 +1,9 @@
 import { ADD_GENRE_ROW } from '../../constants';
 
-const addGenreRow = (genre, animeList) => ({
+const addGenreRow = (genre, animeArray) => ({
   type: ADD_GENRE_ROW,
   genre,
-  animeList,
+  animeArray,
 });
 
 export default addGenreRow;
