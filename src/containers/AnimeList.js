@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
 import getAnimeList from '../API/getAnimeList';
 import addAnimeList from '../store/actions/addAnimeList';
 import changeAnimeType from '../store/actions/changeAnimeType';
@@ -33,21 +33,29 @@ const AnimeList = ({
 
   const animeArray = animeType === '' || animeType === 'All' ? animeList : animeList.filter(anime => anime.type === animeType);
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 3,
+  };
+
   return (
     <main>
       <FeaturedAnime />
       <Filter handleFilterChange={handleFilterChange} animeType={animeType} />
       {
         animeList.length === 0 ? <Loading /> : (
-          <div className="anime-list">
+          <Slider {...settings}>
             { animeArray.map(anime => (
-              <div className="anime" key={anime.mal_id}>
-                <Link to={`/anime/${anime.mal_id}`} />
+              <a href={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
+                {/* <Link to={`/anime/${anime.mal_id}`} /> */}
                 <img src={anime.image_url} alt="" />
                 <span>{anime.title}</span>
-              </div>
+              </a>
             )) }
-          </div>
+          </Slider>
         )
       }
     </main>
