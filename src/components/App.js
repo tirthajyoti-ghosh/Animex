@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import { push as Menu } from 'react-burger-menu';
 import '../assets/styles/App.sass';
-import AnimeList from '../containers/AnimeList';
+import Home from './Home';
 import AnimeDetails from '../containers/AnimeDetails';
 import GenreList from '../containers/GenreList';
 import Navbar from './Navbar';
@@ -22,7 +22,7 @@ const App = () => (
       </Route>
       <div id="page-wrap">
         <Navbar />
-        <Route exact path="/" component={AnimeList} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/genre/:genreId/:genreName" component={GenreList} />
         <Route exact path="/anime/:animeId" component={AnimeDetails} />
       </div>
