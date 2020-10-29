@@ -50,7 +50,6 @@ const AnimeList = ({
           <Slider {...settings}>
             { animeArray.map(anime => (
               <a href={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
-                {/* <Link to={`/anime/${anime.mal_id}`} /> */}
                 <img src={anime.image_url} alt="" />
                 <span>{anime.title}</span>
               </a>
