@@ -24,6 +24,9 @@
   .nav-header
     background-image: linear-gradient(#000,transparent)
 
+    @media screen and ( max-width: 768px )
+      background-image: none
+
   .mobile-menu
     display: none
 
@@ -65,11 +68,14 @@
       text-decoration: none
       position: relative
       width: fit-content
-      
+
+    .bm-item.active
       &::before
         @include underline()
         left: 0
-        bottom: -5px
+        transform-origin: unset
+        transform: unset
+        transition: unset
 
   nav.desktop-menu
     background-color: transparent
