@@ -55,7 +55,7 @@ const FeaturedAnime = ({
                     )
                   }
 
-                <span>{featuredAnime.start_date.split('-')[0]}</span>
+                <span>{parseInt(featuredAnime.start_date, 10)}</span>
                 <span>{featuredAnime.type}</span>
               </div>
               <p>{featuredAnime.synopsis}</p>
@@ -85,14 +85,16 @@ const FeaturedAnime = ({
 };
 
 FeaturedAnime.propTypes = {
-  animeListAdder: PropTypes.func.isRequired,
-  handleFilterChange: PropTypes.func.isRequired,
-  animeType: PropTypes.string.isRequired,
-  animeList: PropTypes.arrayOf(PropTypes.shape({
-    mal_id: PropTypes.number.isRequired,
-    image_url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired).isRequired,
+  featuredAnimeAdder: PropTypes.func.isRequired,
+  featuredAnime: PropTypes.shape({
+    mal_id: PropTypes.number,
+    image_url: PropTypes.string,
+    title: PropTypes.string,
+    score: PropTypes.number,
+    start_date: PropTypes.string,
+    type: PropTypes.string,
+    synopsis: PropTypes.string,
+  }).isRequired,
 };
 
 export default connect(
