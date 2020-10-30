@@ -1,4 +1,4 @@
-const CORS_HANDLER = 'https://cors-anywhere.herokuapp.com/';
+const CORS_HANDLER = 'https://ghosh-cors-anywhere.herokuapp.com/';
 const BASE_URL = `${CORS_HANDLER}https://api.jikan.moe/v3/`;
 const BASE_SEARCH_URL = `${BASE_URL}search/anime?`;
 
