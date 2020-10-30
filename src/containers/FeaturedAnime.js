@@ -32,7 +32,7 @@ const FeaturedAnime = ({
         featuredAnime.mal_id === undefined ? <Loading /> : (
           <section className="featured-anime">
 
-            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.4990371148459384) 34%, rgba(27,27,27,1) 100%), url(${featuredAnime.image_url}` }} />
+            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.5998774509803921) 20%, rgba(27,27,27,1) 85%), url(${featuredAnime.image_url}` }} />
 
             <div className="left">
 
