@@ -114,13 +114,13 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
     ```sh
-    git clone https://github.com/tirthajyoti-ghosh/react-redux-capstone.git
+    git clone https://github.com/tirthajyoti-ghosh/Animex.git
     ```
 
 2. Change directory
 
     ```sh
-    cd <react-redux-capstone>
+    cd <Animex>
     ```
 
 3. Install NPM packages
