@@ -19,7 +19,41 @@
   height: 2px
   background-color: #C90018
 
+@mixin anime-card()
+  .anime
+    display: flex
+    flex-direction: column
+    width: 225px
+    height: 400px
+    margin: 10px
+    margin-top: 10px
+    padding: 10px
+    position: relative
+    text-decoration: none
+    
+    &:hover span
+      text-decoration: underline   
+
+    &:hover img
+      transform: scale(1.04)
+
+    span
+      color: #fff
+      text-decoration: none
+      display: inline-block
+      margin-top: 20px         
+
+    img
+      object-fit: contain
+      transition: transform 450ms
+
 #root
+
+  .nav-header
+    background-image: linear-gradient(#000,transparent)
+
+    @media screen and ( max-width: 768px )
+      background-image: none
 
   .mobile-menu
     display: none
@@ -62,20 +96,22 @@
       text-decoration: none
       position: relative
       width: fit-content
-      
+
+    .bm-item.active
       &::before
         @include underline()
         left: 0
-        bottom: -5px
+        transform-origin: unset
+        transform: unset
+        transition: unset
 
   nav.desktop-menu
-    background-color: #1b1b1b
+    background-color: transparent
     @include flex($justify-content: space-between, $align-items: center)
-    padding: 20px 0
+    padding: 20px 5%
     font-size: 17px
     color: #fff
-    max-width: 1600px
-    width: 90%
+    max-width: 1920px
     margin: 0 auto
 
     .logo
@@ -97,6 +133,7 @@
 
       li
         margin-left: 20px
+
         a
           color: inherit
           position: relative
@@ -108,21 +145,25 @@
             transform-origin: center
             transform: translate(-50%, 0) scaleX(0)
             transition: transform 0.3s ease-in-out
+
           &:hover
             &::before
               transform: translate(-50%, 0) scaleX(1)
-        
-        @media screen and ( max-width: 1024px )
-          margin-left: 10px
 
-      li.active
-        a
+        a.active
           &::before
             @include underline()
             left: 0
             transform-origin: unset
             transform: unset
             transition: unset
+
+          &:hover
+            &::before
+              transform: unset
+        
+        @media screen and ( max-width: 1024px )
+          margin-left: 10px
 
       @media screen and ( max-width: 768px )
         display: none
@@ -153,6 +194,129 @@
     padding: 50px
     color: #fff
 
+    .blurred-background
+      background-size: cover
+      background-position: center
+      position: absolute
+      z-index: -9999
+      top: 0
+      bottom: 0
+      right: 0
+      left: 0
+      filter: blur(8px)
+
+    .anime__score
+      display: inline-block
+      border: 2px solid #FECE02
+      font-size: 18px
+
+      i
+        color: #FECE02
+        padding: 7px
+        border-right: 2px solid #FECE02
+
+      span
+        padding: 7px
+
+    .featured-anime
+      @include flex($justify-content: center, $align-items: flex-start)
+      min-height: 400px
+      width: 80%
+      margin: 0 auto
+      margin-bottom: 100px
+
+      @media screen and ( max-width: 1200px )
+        width: 100%
+
+      @media screen and ( max-width: 876px )
+        flex-direction: column-reverse
+        align-items: center
+
+      .left
+        width: 50%
+        height: 100%
+
+        @media screen and ( max-width: 876px )
+          width: 100%
+
+        header
+          text-transform: uppercase
+          margin-bottom: 50px
+
+          @media screen and ( max-width: 876px )
+            display: none
+
+          span
+            padding-right: 20px
+            color: #adadad
+            font-size: 12px
+            letter-spacing: 2px
+            line-height: 10px
+
+            a
+              color: inherit
+              text-decoration: none
+
+            &:hover
+              color: #fff
+
+          span.active
+            color: #fff
+
+        h1
+          font-size: 40px
+          font-weight: lighter
+          letter-spacing: 2px
+          margin-bottom: 30px
+
+          @media screen and ( max-width: 876px )
+            font-size: 30px
+
+        .stats
+          @include flex($justify-content: flex-start, $align-items: center)
+          margin-bottom: 30px
+
+          & > *
+            margin-right: 20px
+
+          & > span
+            letter-spacing: 3px
+            font-size: 14px
+
+        p
+          margin: 20px 0
+          color: #ffffff
+          letter-spacing: 2px
+          line-height: 25px
+
+        .cta-btn
+          margin-top: 50px
+
+          a
+            padding: 15px
+            border: 1px solid #fff
+            border-radius: 10px
+            margin-right: 30px
+            color: #fff
+            text-decoration: none
+            letter-spacing: 2px
+
+            @media screen and ( max-width: 350px )
+              display: block
+              width: 170px
+              margin: 0 auto
+              text-align: center
+              margin-bottom: 20px
+
+      .right
+        width: 50%
+        height: 100%
+        @include flex($justify-content: center, $align-items: flex-start)
+        
+        @media screen and ( max-width: 876px )
+          width: 100%
+          margin-bottom: 50px
+
     .filter-buttons
       margin-left: 25px
       button
@@ -173,6 +337,24 @@
         width: fit-content
         margin: 0 auto
 
+    .genre-title
+      margin: 50px 0 0 20px
+      text-transform: capitalize
+
+    .slick-slider
+      @media screen and ( max-width: 420px )
+        width: 85%
+        margin: 0 auto
+
+    .slick-slide
+      div
+        @include anime-card()
+
+    .anime-list
+      @include flex($justify-content: center, $align-items: center)      
+      flex-wrap: wrap
+      @include anime-card()
+
     .go-back
       color: #fff
       font-size: 17px
@@ -192,42 +374,6 @@
         width: 100%
         height: 2px
         background-color: #C90018
-
-    .anime-list
-      @include flex($justify-content: center, $align-items: center)      
-      flex-wrap: wrap
-
-      .anime
-        display: flex
-        flex-direction: column
-        width: 225px
-        height: 360px
-        margin: 10px
-        margin-top: 10px
-        padding: 10px
-
-        a
-          color: inherit
-          text-decoration: none
-          margin-top: 5px
-          &:hover
-            text-decoration: underline            
-
-        img
-          width: 100%
-          height: 100%
-          object-fit: contain
-
-    .blurred-background
-      background-size: cover
-      background-position: center
-      position: absolute
-      z-index: -9999
-      top: 0
-      bottom: 0
-      right: 0
-      left: 0
-      filter: blur(8px)
 
     .anime-details
       font-family: 'Open Sans', sans-serif
@@ -278,6 +424,7 @@
 
       @media screen and (max-width: 768px)
         margin-top: 20px
+        padding: 0 10px
 
       .anime-info
         width: 65%
@@ -285,6 +432,9 @@
         .anime__title
           font-size: 40px
           line-height: 45px
+
+          @media screen and ( max-width: 450px )
+            font-size: 28px
 
         .anime__genres
           margin: 20px 0
@@ -310,18 +460,7 @@
               border: none
 
         .anime__score
-          display: inline-block
-          border: 2px solid #FECE02
           margin-bottom: 20px
-          font-size: 18px
-
-          i
-            color: #FECE02
-            padding: 7px
-            border-right: 2px solid #FECE02
-
-          span
-            padding: 7px
 
         p
           margin: 20px 0
@@ -341,10 +480,7 @@
 
     @media screen and ( max-width: 768px )
       margin-top: 20px
-
-  main.details
-    box-shadow: 0px 0px 15px 0px black
-    position: relative
+      padding: 0 5px 50px 5px
 
   // Loading styles and animation
   .loading

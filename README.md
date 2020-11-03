@@ -66,10 +66,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Animex Screenshot](https://user-images.githubusercontent.com/57726348/94736207-7c8dc200-0389-11eb-9606-7cd8c319f5de.png)
-![Animex Screenshot](https://user-images.githubusercontent.com/57726348/94736466-e3ab7680-0389-11eb-95f3-c0ffa5b85074.png)
-
 This is a Single Page Application (SPA) built with React and Redux for browsing animes. The design of the web app resembles Netflix. The data is fetched from [Jikan API](https://jikan.docs.apiary.io/#).
+
+![image](https://user-images.githubusercontent.com/57726348/97852041-388d3480-1d1c-11eb-8430-3089fe921b09.png)
+![image](https://user-images.githubusercontent.com/57726348/97852749-295ab680-1d1d-11eb-9d6b-98a359508aaa.png)
+![image](https://user-images.githubusercontent.com/57726348/97852571-eb5d9280-1d1c-11eb-9f80-942dcda190bd.png)
 
 Routes:
 
@@ -113,13 +114,13 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo
 
     ```sh
-    git clone https://github.com/tirthajyoti-ghosh/react-redux-capstone.git
+    git clone https://github.com/tirthajyoti-ghosh/Animex.git
     ```
 
 2. Change directory
 
     ```sh
-    cd <react-redux-capstone>
+    cd <Animex>
     ```
 
 3. Install NPM packages

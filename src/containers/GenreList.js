@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import getGenreList from '../API/getGenreList';
 import addGenreList from '../store/actions/addGenreList';
 import Loading from '../components/Loading';
@@ -38,10 +37,10 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
             </h1>
             <div className="anime-list">
               { genreList.map(anime => (
-                <div className="anime" key={anime.mal_id}>
+                <a href={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
                   <img src={anime.image_url} alt="" />
-                  <Link to={`/anime/${anime.mal_id}`}>{anime.title}</Link>
-                </div>
+                  <span>{anime.title}</span>
+                </a>
               )) }
             </div>
           </>
