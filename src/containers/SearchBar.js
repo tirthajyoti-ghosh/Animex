@@ -7,6 +7,13 @@ const SearchBar = () => {
   const [options, setOptions] = useState([]);
   const [query, setQuery] = useState('');
 
+  const parseSearchResult = searchString => {
+    getSearchResult(searchString)
+      .then(result => {
+        setOptions(result);
+      });
+  };
+
   const setStates = e => {
     const searchString = e.target.value;
 
@@ -14,8 +21,10 @@ const SearchBar = () => {
 
     if (searchString.length > 2) {
       setDisplay(true);
-      getSearchResult(searchString)
-        .then(result => console.log(result));
+
+      setTimeout(() => {
+        parseSearchResult(searchString);
+      }, 200);
     } else {
       setDisplay(false);
     }
@@ -30,7 +39,16 @@ const SearchBar = () => {
       {
         display && (
           <div className="autocomplete">
-            <Loading />
+            {
+              options.length === 0
+                ? <Loading />
+                : options.map(anime => (
+                  <a href={`/anime/${anime.mal_id}`} key={anime.mal_id}>
+                    <img src={anime.image_url} alt="" />
+                    <span>{anime.title}</span>
+                  </a>
+                ))
+            }
           </div>
         )
       }
