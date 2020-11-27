@@ -1,6 +1,6 @@
 import { FEATURED_ANIME_URL } from '../constants';
 
-const getAnimesList = () => fetch(FEATURED_ANIME_URL)
+const getFeaturedAnime = () => fetch(FEATURED_ANIME_URL)
   .then(
     response => response.json(),
   )
@@ -8,4 +8,4 @@ const getAnimesList = () => fetch(FEATURED_ANIME_URL)
     response => response.results,
   );
 
-export default getAnimesList;
+export default getFeaturedAnime;

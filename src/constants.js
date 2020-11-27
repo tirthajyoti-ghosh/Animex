@@ -6,6 +6,7 @@ export const ANIME_LIST_URL = `${BASE_SEARCH_URL}rated=pg13&order_by=score`;
 export const FEATURED_ANIME_URL = `${BASE_SEARCH_URL}rated=pg13&status=airing`;
 export const ANIME_DETAILS_URL = `${BASE_URL}anime/`;
 export const GENRE_SEARCH_URL = `${BASE_SEARCH_URL}rated=pg13&order_by=score&genre=`;
+export const SEARCH_QUERY_URL = `${BASE_SEARCH_URL}rated=pg13&q=`;
 
 export const ADD_ANIME_LIST = 'ADD_ANIME_LIST';
 export const ADD_FEATURED_ANIME = 'ADD_FEATURED_ANIME';

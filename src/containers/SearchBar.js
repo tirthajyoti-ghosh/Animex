@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Loading from '../components/Loading';
+import getSearchResult from '../API/getSearchResults';
 
 const SearchBar = () => {
   const [display, setDisplay] = useState(false);
@@ -7,12 +8,16 @@ const SearchBar = () => {
   const [query, setQuery] = useState('');
 
   const setStates = e => {
-    setQuery(e.target.value);
+    const searchString = e.target.value;
 
-    if (e.target.value === '') {
-      setDisplay(false);
-    } else {
+    setQuery(searchString);
+
+    if (searchString.length > 2) {
       setDisplay(true);
+      getSearchResult(searchString)
+        .then(result => console.log(result));
+    } else {
+      setDisplay(false);
     }
   };
 
