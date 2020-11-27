@@ -19,14 +19,15 @@ const SearchBar = () => {
 
     setQuery(searchString);
 
-    if (searchString.length > 2) {
+    if (searchString.length > 3) {
       setDisplay(true);
 
       setTimeout(() => {
         parseSearchResult(searchString);
-      }, 200);
+      }, 500);
     } else {
       setDisplay(false);
+      setOptions([]);
     }
   };
 
@@ -43,9 +44,13 @@ const SearchBar = () => {
               options.length === 0
                 ? <Loading />
                 : options.map(anime => (
-                  <a href={`/anime/${anime.mal_id}`} key={anime.mal_id}>
+                  <a href={`/anime/${anime.mal_id}`} key={anime.mal_id} className="option" tab-index="-1">
                     <img src={anime.image_url} alt="" />
-                    <span>{anime.title}</span>
+
+                    <div className="info">
+                      <p>{anime.title}</p>
+                      <p className="date">{parseInt(anime.start_date, 10)}</p>
+                    </div>
                   </a>
                 ))
             }
