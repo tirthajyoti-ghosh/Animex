@@ -45,7 +45,6 @@ const SearchBar = () => {
 
       <input type="text" value={query} onChange={beginSearch} placeholder="Start typing..." />
 
-
       {
         display && (
           <>

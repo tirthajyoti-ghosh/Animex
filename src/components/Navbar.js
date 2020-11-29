@@ -4,6 +4,8 @@ import SearchBar from '../containers/SearchBar';
 
 const Navbar = () => (
   <header className="nav-header">
+    <a className="mobile-logo" href="/"><img src="https://fontmeme.com/permalink/200927/7644f67b9ca3547230cb655ba735cc04.png" alt="logo" border="0" /></a>
+
     <nav className="desktop-menu">
       <div className="left">
         <a className="logo" href="/"><img src="https://fontmeme.com/permalink/200927/7644f67b9ca3547230cb655ba735cc04.png" alt="logo" border="0" /></a>
