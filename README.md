@@ -66,17 +66,23 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a Single Page Application (SPA) built with React and Redux for browsing animes. The design of the web app resembles Netflix. The data is fetched from [Jikan API](https://jikan.docs.apiary.io/#).
+This is a Single Page Application (SPA) built with React and Redux to browse and search animes. The design of the web app resembles Netflix. The data is fetched from [Jikan API](https://jikan.docs.apiary.io/#).
 
-![image](https://user-images.githubusercontent.com/57726348/97852041-388d3480-1d1c-11eb-8430-3089fe921b09.png)
+![image](https://user-images.githubusercontent.com/57726348/100578687-ce5eb400-3308-11eb-9746-1bd37d560d21.png)
 ![image](https://user-images.githubusercontent.com/57726348/97852749-295ab680-1d1d-11eb-9d6b-98a359508aaa.png)
-![image](https://user-images.githubusercontent.com/57726348/97852571-eb5d9280-1d1c-11eb-9f80-942dcda190bd.png)
+![image](https://user-images.githubusercontent.com/57726348/100578778-fb12cb80-3308-11eb-8dd8-9b8255e8a8b6.png)
 
-Routes:
+#### Routes:
 
 * `/` - home page.
 * `/genre/:genreId/:genreName` - genre page.
 * `/anime/:animeId` - anime details page
+
+#### Features:
+
+* Search anime
+* Browse anime
+* View anime details
 
 ### Built With
 
@@ -120,7 +126,7 @@ To get a local copy up and running follow these simple steps.
 2. Change directory
 
     ```sh
-    cd <Animex>
+    cd Animex
     ```
 
 3. Install NPM packages
@@ -138,7 +144,7 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-* Add search feature
+* Add footer
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -161,17 +167,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 👤 **Tirthajyoti Ghosh**
 
-- Website: [tirthajyoti](https://tirthajyoti-ghosh.github.io/Portfolio/)
+- Website: [ghosh.tech](https://ghosh.tech)
 - GitHub - [@tirthajyoti-ghosh](https://github.com/tirthajyoti-ghosh)
 - Twitter - [@terrific_ghosh](https://twitter.com/terrific_ghosh)
-- LinkedIn - [linkedin](https://www.linkedin.com/in/tirthajyoti-ghosh/)
+- LinkedIn - [@tirthajyoti-ghosh](https://www.linkedin.com/in/tirthajyoti-ghosh/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
 * Design inspirations
-  * https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs
-  * https://dribbble.com/shots/5253521-Netflix-Redesign-Idea
+  * [Netflix-Redesign-challenge-on-Uplabs](https://dribbble.com/shots/5093535-Netflix-Redesign-challenge-on-Uplabs)
+  * [Netflix-Redesign-Idea](https://dribbble.com/shots/5253521-Netflix-Redesign-Idea)
 * README Icon from Icons8
 * [Img Shields](https://shields.io)
 * [Font Awesome](https://fontawesome.com)
