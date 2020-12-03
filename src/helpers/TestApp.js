@@ -5,10 +5,10 @@ import App from '../components/App';
 import reducer from '../store/reducers/index';
 
 const initialState = {
-  animeList: [],
+  featuredAnime: {},
   genreList: [],
+  genreRow: {},
   animeDetails: {},
-  animeType: '',
 };
 
 const store = createStore(reducer, initialState);
