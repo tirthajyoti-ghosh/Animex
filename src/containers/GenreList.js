@@ -17,12 +17,14 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
   const { genreId, genreName } = match.params;
 
   useEffect(() => {
-    getGenreList(genreId)
-      .then(
-        animeArray => {
-          genreListAdder(animeArray);
-        },
-      );
+    setTimeout(() => { // to get around 2 requests/second rate-limit of Jikan API
+      getGenreList(genreId)
+        .then(
+          animeArray => {
+            genreListAdder(animeArray);
+          },
+        );
+    }, 500);
   }, [genreId]);
 
   return (
