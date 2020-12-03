@@ -10,6 +10,6 @@ describe('Navbar', () => {
 
     const getByTextWithMarkup = text => getAllByText((_, node) => node.textContent === text);
 
-    expect(getByTextWithMarkup('HomeActionComedyRomanceShounenSupernaturalSign InSign Up')[0]).toBeInTheDocument();
+    expect(getByTextWithMarkup('HomeActionComedyRomanceShounenSupernaturalLog InRegister')[0]).toBeInTheDocument();
   });
 });
