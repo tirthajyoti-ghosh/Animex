@@ -6,12 +6,14 @@ import Home from './Home';
 import AnimeDetails from '../containers/AnimeDetails';
 import GenreList from '../containers/GenreList';
 import Navbar from './Navbar';
+import SearchBar from '../containers/SearchBar';
 
 const App = () => (
   <Router>
     <div id="outer-container">
       <Route>
-        <Menu width="200px" className="mobile-menu" pageWrapId="page-wrap" outerContainerId="outer-container">
+        <Menu width="300px" className="mobile-menu" pageWrapId="page-wrap" outerContainerId="outer-container">
+          <SearchBar />
           <NavLink exact to="/" activeClassName="active">Home</NavLink>
           <NavLink exact to="/genre/1/Action" activeClassName="active">Action</NavLink>
           <NavLink exact to="/genre/4/Comedy" activeClassName="active">Comedy</NavLink>

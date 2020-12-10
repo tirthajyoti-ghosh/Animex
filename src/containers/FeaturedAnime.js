@@ -18,12 +18,14 @@ const FeaturedAnime = ({
   featuredAnimeAdder, featuredAnime,
 }) => {
   useEffect(() => {
-    getFeaturedAnime()
-      .then(
-        featuredAnime => {
-          featuredAnimeAdder(featuredAnime[Math.floor(Math.random() * 50)]);
-        },
-      );
+    setTimeout(() => { // to get around 2 requests/second rate-limit of Jikan API
+      getFeaturedAnime()
+        .then(
+          featuredAnime => {
+            featuredAnimeAdder(featuredAnime[Math.floor(Math.random() * 50)]);
+          },
+        );
+    }, 500);
   }, []); // adding dependency results in infinite number of network requests
 
   return (

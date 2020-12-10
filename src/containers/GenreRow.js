@@ -17,15 +17,27 @@ const mapStateToProps = state => ({
 });
 
 const GenreRow = ({
-  genreRowAdder, genreRow, genreId, genreName,
+  genreRowAdder, genreRow, genreId, genreName, delay,
 }) => {
+  const shuffle = array => {
+    for (let i = array.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      /* eslint-disable no-param-reassign */
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
   useEffect(() => {
-    getGenreList(genreId)
-      .then(
-        animeArray => {
-          genreRowAdder(genreName, animeArray);
-        },
-      );
+    setTimeout(() => { // to get around 2 requests/second rate-limit of Jikan API
+      getGenreList(genreId)
+        .then(
+          animeArray => {
+            genreRowAdder(genreName, shuffle(animeArray));
+          },
+        );
+    }, delay);
   }, []);
 
   return (
@@ -60,6 +72,7 @@ GenreRow.propTypes = {
   genreRow: PropTypes.shape({
     genreName: PropTypes.arrayOf(PropTypes.object),
   }).isRequired,
+  delay: PropTypes.string.isRequired,
 };
 
 export default connect(

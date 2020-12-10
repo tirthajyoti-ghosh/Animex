@@ -3,8 +3,7 @@
   justify-content: $justify-content
   align-items: $align-items
 
-@mixin default-button()
-  cursor: pointer
+@mixin remove-border()
   background-color: transparent
   border: none
   box-shadow: none
@@ -48,17 +47,30 @@
       transition: transform 450ms
 
 #root
-
   .nav-header
     background-image: linear-gradient(#000,transparent)
 
-    @media screen and ( max-width: 768px )
+    .mobile-logo
+      display: none
+      width: 130px
+      height: 40px
+      margin: 0 auto
+      margin-top: -30px
+
+      @media screen and ( max-width: 876px )
+        display: block
+
+      img
+        width: 100%
+        height: 100%
+
+    @media screen and ( max-width: 876px )
       background-image: none
 
   .mobile-menu
     display: none
 
-    @media screen and ( max-width: 768px )
+    @media screen and ( max-width: 1075px )
       display: block
 
   .bm-burger-button
@@ -69,7 +81,7 @@
     margin-left: 20px
     margin-top: 20px
 
-    @media screen and ( max-width: 768px )
+    @media screen and ( max-width: 876px )
       display: inline-block
 
   .bm-burger-bars 
@@ -83,7 +95,7 @@
       width: 85%
 
   .bm-cross
-      background: #C90018
+    background: #C90018
 
   .bm-item-list
     background-color: #202020
@@ -96,6 +108,7 @@
       text-decoration: none
       position: relative
       width: fit-content
+      border-left: 2px solid transparent
 
     .bm-item.active
       &::before
@@ -104,6 +117,82 @@
         transform-origin: unset
         transform: unset
         transition: unset
+
+  .search-bar
+    @include flex($justify-content: center, $align-items: center)
+    padding: 10px
+    background-color: #202020
+    border-radius: 3px
+    margin-right: 30px
+    position: relative
+
+    @media screen and ( max-width: 876px )
+      border: 2px solid #c90018
+      width: 100%
+      
+    @media screen and ( max-width: 1300px )
+      margin-right: 20px
+
+    svg
+      margin: 0 10px
+
+      @media screen and ( max-width: 876px )
+        margin-left: 0
+
+    input
+      @include remove-border()
+      width: 250px
+      color: white
+      font: 400 13.3333px 'Helvetica'
+      letter-spacing: 0.8px
+      line-height: 20px
+
+      @media screen and ( max-width: 1150px )
+        width: 200px
+
+      @media screen and ( max-width: 1075px )
+        width: 150px
+
+      @media screen and ( max-width: 876px )
+        width: 200px
+
+    .dismiss
+      cursor: pointer
+      margin: 0
+
+    .autocomplete
+      position: absolute
+      top: 40px
+      left: 0
+      right: 0
+      z-index: 9999
+      background-color: #202020
+      max-height: 455px
+      min-height: 91px
+      overflow: auto
+
+      .option
+        padding: 10px 20px
+        border-top: 1px solid #494949
+        @include flex($justify-content: flex-start, $align-items: flex-start)
+        color: #fff
+        text-decoration: none
+
+        &:hover, &:focus
+          background-color: #494949
+
+        img
+          width: 50px
+          height: 70px
+          margin-right: 15px
+
+        .info
+          font-size: 15px
+
+          .date
+            font-size: 13px
+            margin-top: 10px
+            color: #a8a8a8
 
   nav.desktop-menu
     background-color: transparent
@@ -114,76 +203,105 @@
     max-width: 1920px
     margin: 0 auto
 
-    .logo
-      width: 130px
-      height: 40px
-      margin-top: 4px
-
-      img
-        width: 100%
-        height: 100%
-
-      @media screen and ( max-width: 768px )
-        margin: 0 auto
-        margin-top: -65px
-
-    .genre-links
+    .left
       @include flex($justify-content: space-between, $align-items: center)
-      list-style: none
 
-      li
-        margin-left: 20px
+      .logo
+        width: 130px
+        height: 40px
+        margin-top: 4px
+        margin-right: 30px
 
-        a
-          color: inherit
-          position: relative
-          text-decoration: none
+        img
+          width: 100%
+          height: 100%
 
-          &::before
-            @include underline()
-            left: 50%
-            transform-origin: center
-            transform: translate(-50%, 0) scaleX(0)
-            transition: transform 0.3s ease-in-out
+        @media screen and ( max-width: 1300px )
+          margin-right: 20px
 
-          &:hover
+        @media screen and ( max-width: 1075px )
+          margin-right: 10px
+
+        @media screen and ( max-width: 876px )
+          margin: 0 auto
+          margin-top: -65px
+
+      .genre-links
+        @include flex($justify-content: space-between, $align-items: center)
+        list-style: none
+
+        li
+          margin-left: 20px
+
+          a
+            color: inherit
+            position: relative
+            text-decoration: none
+
             &::before
-              transform: translate(-50%, 0) scaleX(1)
+              @include underline()
+              left: 50%
+              transform-origin: center
+              transform: translate(-50%, 0) scaleX(0)
+              transition: transform 0.3s ease-in-out
 
-        a.active
-          &::before
-            @include underline()
-            left: 0
-            transform-origin: unset
-            transform: unset
-            transition: unset
+            &:hover
+              &::before
+                transform: translate(-50%, 0) scaleX(1)
 
-          &:hover
+          a.active
             &::before
+              @include underline()
+              left: 0
+              transform-origin: unset
               transform: unset
-        
-        @media screen and ( max-width: 1024px )
-          margin-left: 10px
+              transition: unset
 
-      @media screen and ( max-width: 768px )
+            &:hover
+              &::before
+                transform: unset
+          
+          @media screen and ( max-width: 1300px )
+            margin-left: 15px
+
+          @media screen and ( max-width: 1000px )
+            &:last-child
+              display: none
+
+          @media screen and ( max-width: 890px )
+            &:nth-last-child(2)
+              display: none
+
+      @media screen and ( max-width: 876px )
         display: none
-  
-    .login-links
+
+    .right
       @include flex($justify-content: space-between, $align-items: center)
-      list-style: none
+      position: relative   
 
-      li
-        color: inherit
-        cursor: pointer
-        margin-left: 20px
+      .search-bar
+        @media screen and ( max-width: 876px )
+          display: none
 
-        @media screen and ( max-width: 1024px )
-          margin-left: 10px
-    
-      @media screen and ( max-width: 768px )
-        display: none
+      .login-links
+        @include flex($justify-content: space-between, $align-items: center)
+        list-style: none
 
-    @media screen and ( max-width: 876px )
+        li
+          color: inherit
+          cursor: pointer
+          margin-left: 20px
+
+          @media screen and ( max-width: 1300px )
+            margin-left: 15px
+      
+        @media screen and ( max-width: 876px )
+          display: none
+
+    @media screen and ( max-width: 1440px )
+      padding: 20px 2.5%
+
+    @media screen and ( max-width: 1300px )
       font-size: 15px
 
   main
@@ -322,7 +440,8 @@
       button
         color: #fff
         font-size: 12px
-        @include default-button()
+        @include remove-border()
+        cursor: pointer
         margin: 10px
         text-transform: uppercase
         letter-spacing: 5px
@@ -358,7 +477,8 @@
     .go-back
       color: #fff
       font-size: 17px
-      @include default-button()
+      @include remove-border()
+      cursor: pointer
 
       @media screen and ( min-width: 876px )
         font-size: 20px
@@ -419,10 +539,10 @@
         @media screen and (max-width: 876px)
           width: 50%
 
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: 876px)
           width: 100%
 
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 876px)
         margin-top: 20px
         padding: 0 10px
 
@@ -471,14 +591,14 @@
         @media screen and (max-width: 876px)
           width: 50%
 
-        @media screen and (max-width: 768px)
+        @media screen and (max-width: 876px)
           width: 100%
 
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 876px)
         flex-direction: column
         align-items: center
 
-    @media screen and ( max-width: 768px )
+    @media screen and ( max-width: 876px )
       margin-top: 20px
       padding: 0 5px 50px 5px
 

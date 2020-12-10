@@ -18,12 +18,14 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
   const { animeId } = match.params;
 
   useEffect(() => {
-    getAnimeDetails(animeId)
-      .then(
-        anime => {
-          animeDetailsAdder(anime);
-        },
-      );
+    setTimeout(() => { // to get around 2 requests/second rate-limit of Jikan API
+      getAnimeDetails(animeId)
+        .then(
+          anime => {
+            animeDetailsAdder(anime);
+          },
+        );
+    }, 500);
   }, [animeDetails.mal_id]);
 
   const history = useHistory();
