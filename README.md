@@ -71,6 +71,7 @@ This is a Single Page Application (SPA) built with React and Redux to browse and
 ![image](https://user-images.githubusercontent.com/57726348/100578687-ce5eb400-3308-11eb-9746-1bd37d560d21.png)
 ![image](https://user-images.githubusercontent.com/57726348/97852749-295ab680-1d1d-11eb-9d6b-98a359508aaa.png)
 ![image](https://user-images.githubusercontent.com/57726348/100578778-fb12cb80-3308-11eb-8dd8-9b8255e8a8b6.png)
+![image](https://user-images.githubusercontent.com/57726348/101772795-db05b800-3b11-11eb-8633-76033d18bf15.png)
 
 #### Routes:
 
