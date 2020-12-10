@@ -144,7 +144,7 @@ To get a local copy up and running follow these simple steps.
 <!-- ROADMAP -->
 ## Roadmap
 
-* Add footer
+Check the [issues](https://github.com/tirthajyoti-ghosh/Animex/issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
