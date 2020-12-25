@@ -41,7 +41,7 @@
     <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://tg-animex.herokuapp.com/">View Demo</a>
+    <a href="https://ghosh-animex.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/tirthajyoti-ghosh/react-redux-capstone/issues">Report Bug</a>
     ·
@@ -97,11 +97,11 @@ This is a Single Page Application (SPA) built with React and Redux to browse and
 - Jikan API
 - React-burger-menu
 - Prop-types
-- [Heroku](https://tg-animex.herokuapp.com/)
+- [Heroku](https://ghosh-animex.netlify.app/)
 
 ## Live demo
 
-Deployed to Heroku - [live demo](https://tg-animex.herokuapp.com/).
+Deployed to Heroku - [live demo](https://ghosh-animex.netlify.app/).
 
 <!-- GETTING STARTED -->
 ## Getting Started
