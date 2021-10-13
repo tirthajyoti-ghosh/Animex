@@ -97,7 +97,7 @@ This is a Single Page Application (SPA) built with React and Redux to browse and
 - Jikan API
 - React-burger-menu
 - Prop-types
-- [Heroku](https://ghosh-animex.netlify.app/)
+- [Netlify](https://ghosh-animex.netlify.app/)
 
 ## Live demo
 
