@@ -13,6 +13,29 @@ export const ADD_GENRE_LIST = 'ADD_GENRE_LIST';
 export const ADD_ANIME_DETAILS = 'ADD_ANIME_DETAILS';
 export const ADD_GENRE_ROW = 'ADD_GENRE_ROW';
 
+export const GENRES = [
+    {
+        name: 'Action',
+        id: 1,
+    },
+    {
+        name: 'Comedy',
+        id: 4,
+    },
+    {
+        name: 'Romance',
+        id: 22,
+    },
+    {
+        name: 'Shounen',
+        id: 27,
+    },
+    {
+        name: 'Supernatural',
+        id: 37,
+    },
+];
+
 export const sliderSettings = {
     dots: false,
     infinite: false,
