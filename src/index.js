@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 
 import './assets/styles/index.sass';
 import './assets/styles/reset.css';
-import App from './components/App';
+import App from './App';
 
 import reducer from './store/reducers/index';
 
@@ -20,9 +20,9 @@ const initialState = {
 // genreRow object structure:
 
 // genreRow: {
-//    genre1: [ // genre1 animes ]
-//    genre2: [ // genre2 animes ]
-//    genre3: [ // genre3 animes ]
+//    genre1: [ // genre1 anime ]
+//    genre2: [ // genre2 anime ]
+//    genre3: [ // genre3 anime ]
 // }
 
 const store = createStore(reducer, initialState);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SearchBar from '../containers/SearchBar';
+import SearchBar from './SearchBar';
 
 const Navbar = () => (
     <header className="nav-header">
