@@ -7,13 +7,13 @@ import '@testing-library/jest-dom/extend-expect';
 import TestApp from '../../helpers/TestApp';
 
 test('successfully lands on the AnimeDetails page', async () => {
-  const history = createMemoryHistory();
-  history.push('/anime/32281');
-  render(
-    <Router history={history}>
-      <TestApp />
-    </Router>,
-  );
-  const result = await screen.findByText(/Kimi no Na wa./);
-  expect(result).toBeTruthy();
+    const history = createMemoryHistory();
+    history.push('/anime/32281');
+    render(
+        <Router history={history}>
+            <TestApp />
+        </Router>,
+    );
+    const result = await screen.findByText(/Kimi no Na wa./);
+    expect(result).toBeTruthy();
 });

@@ -5,15 +5,15 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import TestApp from '../../helpers/TestApp';
 
 describe('GenreList page', () => {
-  test('has genre name at the top', async () => {
-    const { getAllByText } = render(<TestApp />);
+    test('has genre name at the top', async () => {
+        const { getAllByText } = render(<TestApp />);
 
-    const getByTextWithMarkup = text => getAllByText((_, node) => node.textContent === text);
+        const getByTextWithMarkup = text => getAllByText((_, node) => node.textContent === text);
 
-    fireEvent.click(getByTextWithMarkup('Shounen')[0]);
+        fireEvent.click(getByTextWithMarkup('Shounen')[0]);
 
-    const result = await screen.findByText('Shounen animes');
+        const result = await screen.findByText('Shounen animes');
 
-    expect(result).toBeTruthy();
-  });
+        expect(result).toBeTruthy();
+    });
 });

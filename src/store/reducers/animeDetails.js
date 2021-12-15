@@ -1,12 +1,12 @@
 import { ADD_ANIME_DETAILS } from '../../constants';
 
 const animeDetails = (state = {}, action) => {
-  switch (action.type) {
+    switch (action.type) {
     case ADD_ANIME_DETAILS:
-      return action.animeDetails;
+        return action.animeDetails;
     default:
-      return state;
-  }
+        return state;
+    }
 };
 
 export default animeDetails;

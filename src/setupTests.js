@@ -1,7 +1,7 @@
-window.matchMedia = window.matchMedia || function () {
-  return {
-    matches: false,
-    addListener() {},
-    removeListener() {},
-  };
+window.matchMedia = window.matchMedia || function setupTests() {
+    return {
+        matches: false,
+        addListener() {},
+        removeListener() {},
+    };
 };

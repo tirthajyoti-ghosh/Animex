@@ -5,8 +5,8 @@ import genreRow from './genreRow';
 import animeDetails from './animeDetails';
 
 export default combineReducers({
-  featuredAnime,
-  genreRow,
-  genreList,
-  animeDetails,
+    featuredAnime,
+    genreRow,
+    genreList,
+    animeDetails,
 });
