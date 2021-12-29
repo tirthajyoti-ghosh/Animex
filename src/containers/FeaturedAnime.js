@@ -6,7 +6,7 @@ import getFeaturedAnime from '../API/getFeaturedAnime';
 import Loading from '../components/Loading';
 import addFeaturedAnime from '../store/actions/addFeaturedAnime';
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
     featuredAnimeAdder: featuredAnime => dispatch(addFeaturedAnime(featuredAnime)),
 });
 
@@ -34,7 +34,10 @@ const FeaturedAnime = ({
                 featuredAnime.mal_id === undefined ? <Loading /> : (
                     <section className="featured-anime">
 
-                        <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.5998774509803921) 20%, rgba(27,27,27,1) 85%), url(${featuredAnime.image_url}` }} />
+                        <div
+                            className="blurred-background"
+                            style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.5998774509803921) 20%, rgba(27,27,27,1) 85%), url(${featuredAnime.image_url}` }}
+                        />
 
                         <div className="left">
 
@@ -101,5 +104,5 @@ FeaturedAnime.propTypes = {
 
 export default connect(
     mapStateToProps,
-    mapDipatchToProps,
+    mapDispatchToProps,
 )(FeaturedAnime);

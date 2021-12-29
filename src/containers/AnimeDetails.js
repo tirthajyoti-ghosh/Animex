@@ -6,7 +6,7 @@ import getAnimeDetails from '../API/getAnimeDetails';
 import addAnimeDetails from '../store/actions/addAnimeDetails';
 import Loading from '../components/Loading';
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
     animeDetailsAdder: anime => dispatch(addAnimeDetails(anime)),
 });
 
@@ -40,7 +40,10 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                 animeDetails.mal_id !== parseInt(animeId, 10) ? <Loading /> : (
                     <main>
 
-                        <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.image_url}` }} />
+                        <div
+                            className="blurred-background"
+                            style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.image_url}` }}
+                        />
 
                         <button
                             type="button"
@@ -67,7 +70,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                                                 <p>
                                                     <i className="fas fa-exclamation-circle" />
                                                     &nbsp;
-                                                    Trailer not avaliable
+                                                    Trailer not available
                                                 </p>
                                             )
                                             : (
@@ -104,7 +107,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                                             <p>
                                                 <i className="fas fa-exclamation-circle" />
                                                 &nbsp;
-                                                Score not avaliable
+                                                Score not available
                                             </p>
                                         )
                                         : (
@@ -154,7 +157,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                                             <p>
                                                 <i className="fas fa-exclamation-circle" />
                                                 &nbsp;
-                                                Synopsis not avaliable
+                                                Synopsis not available
                                             </p>
                                         )
                                         : (
@@ -197,5 +200,5 @@ AnimeDetails.propTypes = {
 
 export default connect(
     mapStateToProps,
-    mapDipatchToProps,
+    mapDispatchToProps,
 )(AnimeDetails);
