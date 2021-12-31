@@ -30,7 +30,7 @@ const SearchBar = () => {
         }
 
         return () => clearTimeout(timeout);
-    }, [query]);
+    }, [query, isQueryLengthSufficient]);
 
     const endSearch = () => {
         setQuery('');
