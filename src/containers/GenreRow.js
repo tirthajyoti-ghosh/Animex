@@ -70,7 +70,7 @@ GenreRow.propTypes = {
   genreName: PropTypes.string.isRequired,
   genreRowAdder: PropTypes.func.isRequired,
   genreRow: PropTypes.shape({
-    genreName: PropTypes.arrayOf(PropTypes.object),
+    genreName: PropTypes.arrayOf(PropTypes.shape({})),
   }).isRequired,
   delay: PropTypes.string.isRequired,
 };

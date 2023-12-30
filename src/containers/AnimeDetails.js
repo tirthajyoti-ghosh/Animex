@@ -6,7 +6,7 @@ import getAnimeDetails from '../API/getAnimeDetails';
 import addAnimeDetails from '../store/actions/addAnimeDetails';
 import Loading from '../components/Loading';
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   animeDetailsAdder: anime => dispatch(addAnimeDetails(anime)),
 });
 
@@ -97,7 +97,6 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
                   }
                 </div>
 
-
                 {
                   animeDetails.score === null
                     ? (
@@ -183,7 +182,7 @@ AnimeDetails.propTypes = {
     url: PropTypes.string,
     trailer_url: PropTypes.string,
     title: PropTypes.string,
-    genres: PropTypes.arrayOf(PropTypes.object),
+    genres: PropTypes.arrayOf(PropTypes.shape({})),
     score: PropTypes.number,
     aired: PropTypes.shape({
       string: PropTypes.string,
@@ -197,5 +196,5 @@ AnimeDetails.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDipatchToProps,
+  mapDispatchToProps,
 )(AnimeDetails);
