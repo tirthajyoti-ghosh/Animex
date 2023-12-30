@@ -1,6 +1,6 @@
-const CORS_HANDLER = 'https://ghosh-cors-anywhere.herokuapp.com/';
+const CORS_HANDLER = 'https://utility-endpoints.netlify.app/.netlify/functions/cors-proxy/';
 const BASE_URL = `${CORS_HANDLER}https://api.jikan.moe/v3/`;
-const BASE_SEARCH_URL = `${BASE_URL}search/anime?`;
+const BASE_SEARCH_URL = `${BASE_URL}/anime?`;
 
 export const ANIME_LIST_URL = `${BASE_SEARCH_URL}rated=pg13&order_by=score`;
 export const FEATURED_ANIME_URL = `${BASE_SEARCH_URL}rated=pg13&status=airing`;
