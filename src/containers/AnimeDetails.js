@@ -40,7 +40,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
         animeDetails.mal_id !== parseInt(animeId, 10) ? <Loading /> : (
           <main>
 
-            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.image_url}` }} />
+            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.3785889355742297) 0%, rgba(27,27,27,0.9640231092436975) 65%), url(${animeDetails.images.webp.large_image_url}`, position: 'fixed' }} />
 
             <button
               type="button"
@@ -54,7 +54,7 @@ const AnimeDetails = ({ animeDetailsAdder, animeDetails, match }) => {
 
             <div className="anime-details">
               <div className="anime__img">
-                <img src={animeDetails.image_url} alt={animeDetails.title} />
+                <img src={animeDetails.images.webp.large_image_url} alt={animeDetails.title} />
 
                 <div className="anime__watch-links">
                   <a href={animeDetails.url} target="_blank" rel="noopener noreferrer" className="watch">
@@ -178,7 +178,13 @@ AnimeDetails.propTypes = {
   animeDetailsAdder: PropTypes.func.isRequired,
   animeDetails: PropTypes.shape({
     mal_id: PropTypes.number,
-    image_url: PropTypes.string,
+    images: PropTypes.shape({
+      webp: PropTypes.shape({
+        image_url: PropTypes.string,
+        large_image_url: PropTypes.string,
+        small_image_url: PropTypes.string,
+      }),
+    }),
     url: PropTypes.string,
     trailer_url: PropTypes.string,
     title: PropTypes.string,

@@ -6,7 +6,7 @@ import getFeaturedAnime from '../API/getFeaturedAnime';
 import Loading from '../components/Loading';
 import addFeaturedAnime from '../store/actions/addFeaturedAnime';
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   featuredAnimeAdder: featuredAnime => dispatch(addFeaturedAnime(featuredAnime)),
 });
 
@@ -22,7 +22,7 @@ const FeaturedAnime = ({
       getFeaturedAnime()
         .then(
           featuredAnime => {
-            featuredAnimeAdder(featuredAnime[Math.floor(Math.random() * 50)]);
+            featuredAnimeAdder(featuredAnime[Math.floor(Math.random() * 25)]);
           },
         );
     }, 500);
@@ -34,7 +34,7 @@ const FeaturedAnime = ({
         featuredAnime.mal_id === undefined ? <Loading /> : (
           <section className="featured-anime">
 
-            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.5998774509803921) 20%, rgba(27,27,27,1) 85%), url(${featuredAnime.image_url}` }} />
+            <div className="blurred-background" style={{ backgroundImage: `linear-gradient(180deg, rgba(27,27,27,0.5998774509803921) 20%, rgba(27,27,27,1) 85%), url(${featuredAnime.images.webp.large_image_url}` }} />
 
             <div className="left">
 
@@ -60,7 +60,10 @@ const FeaturedAnime = ({
                 <span>{parseInt(featuredAnime.start_date, 10)}</span>
                 <span>{featuredAnime.type}</span>
               </div>
-              <p>{featuredAnime.synopsis}</p>
+              <p>
+                {featuredAnime.synopsis.slice(0, 300)}
+                ...
+              </p>
 
               <div className="cta-btn">
                 <a href="/">
@@ -77,7 +80,7 @@ const FeaturedAnime = ({
             </div>
 
             <div className="right">
-              <img src={featuredAnime.image_url} alt={featuredAnime.title} />
+              <img src={featuredAnime.images.webp.large_image_url} alt={featuredAnime.title} />
             </div>
           </section>
         )
@@ -90,6 +93,13 @@ FeaturedAnime.propTypes = {
   featuredAnimeAdder: PropTypes.func.isRequired,
   featuredAnime: PropTypes.shape({
     mal_id: PropTypes.number,
+    images: PropTypes.shape({
+      webp: PropTypes.shape({
+        image_url: PropTypes.string,
+        large_image_url: PropTypes.string,
+        small_image_url: PropTypes.string,
+      }),
+    }),
     image_url: PropTypes.string,
     title: PropTypes.string,
     score: PropTypes.number,
@@ -101,5 +111,5 @@ FeaturedAnime.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDipatchToProps,
+  mapDispatchToProps,
 )(FeaturedAnime);

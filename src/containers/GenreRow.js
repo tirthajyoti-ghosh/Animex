@@ -8,7 +8,7 @@ import addGenreRow from '../store/actions/addGenreRow';
 import Loading from '../components/Loading';
 import { sliderSettings } from '../constants';
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   genreRowAdder: (genreName, animeArray) => dispatch(addGenreRow(genreName, animeArray)),
 });
 
@@ -53,7 +53,7 @@ const GenreRow = ({
             <Slider {...sliderSettings}>
               { genreRow[genreName].map(anime => (
                 <a href={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
-                  <img src={anime.image_url} alt="" />
+                  <img src={anime.images.webp.image_url} alt="" />
                   <span>{anime.title}</span>
                 </a>
               )) }
@@ -77,5 +77,5 @@ GenreRow.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDipatchToProps,
+  mapDispatchToProps,
 )(GenreRow);

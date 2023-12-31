@@ -5,7 +5,7 @@ import getGenreList from '../API/getGenreList';
 import addGenreList from '../store/actions/addGenreList';
 import Loading from '../components/Loading';
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   genreListAdder: animeArray => dispatch(addGenreList(animeArray)),
 });
 
@@ -40,7 +40,7 @@ const GenreList = ({ genreListAdder, genreList, match }) => {
             <div className="anime-list">
               { genreList.map(anime => (
                 <a href={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
-                  <img src={anime.image_url} alt="" />
+                  <img src={anime.images.webp.image_url} alt="" />
                   <span>{anime.title}</span>
                 </a>
               )) }
@@ -62,12 +62,18 @@ GenreList.propTypes = {
   genreListAdder: PropTypes.func.isRequired,
   genreList: PropTypes.arrayOf(PropTypes.shape({
     mal_id: PropTypes.number.isRequired,
-    image_url: PropTypes.string.isRequired,
+    images: PropTypes.shape({
+      webp: PropTypes.shape({
+        image_url: PropTypes.string,
+        large_image_url: PropTypes.string,
+        small_image_url: PropTypes.string,
+      }),
+    }),
     title: PropTypes.string.isRequired,
   }).isRequired).isRequired,
 };
 
 export default connect(
   mapStateToProps,
-  mapDipatchToProps,
+  mapDispatchToProps,
 )(GenreList);
