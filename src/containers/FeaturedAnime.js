@@ -57,7 +57,7 @@ const FeaturedAnime = ({
                     )
                   }
 
-                <span>{parseInt(featuredAnime.start_date, 10)}</span>
+                {featuredAnime.year && <span>{parseInt(featuredAnime.year, 10)}</span>}
                 <span>{featuredAnime.type}</span>
               </div>
               <p>
@@ -103,6 +103,7 @@ FeaturedAnime.propTypes = {
     image_url: PropTypes.string,
     title: PropTypes.string,
     score: PropTypes.number,
+    year: PropTypes.number,
     start_date: PropTypes.string,
     type: PropTypes.string,
     synopsis: PropTypes.string,
