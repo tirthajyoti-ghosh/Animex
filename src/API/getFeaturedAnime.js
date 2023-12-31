@@ -5,7 +5,7 @@ const getFeaturedAnime = () => fetch(FEATURED_ANIME_URL)
     response => response.json(),
   )
   .then(
-    response => response.results,
+    response => response.data,
   );
 
 export default getFeaturedAnime;

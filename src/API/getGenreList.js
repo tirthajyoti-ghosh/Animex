@@ -5,7 +5,7 @@ const getGenreList = genreId => fetch(`${GENRE_SEARCH_URL}${genreId}`)
     response => response.json(),
   )
   .then(
-    response => response.results,
+    response => response.data,
   );
 
 export default getGenreList;

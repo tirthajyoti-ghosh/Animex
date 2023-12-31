@@ -5,7 +5,7 @@ const getSearchResults = searchQuery => fetch(SEARCH_QUERY_URL + searchQuery)
     response => response.json(),
   )
   .then(
-    response => response.results,
+    response => response.data,
   );
 
 export default getSearchResults;

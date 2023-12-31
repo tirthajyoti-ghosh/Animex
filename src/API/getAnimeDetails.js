@@ -5,7 +5,7 @@ const getAnimeDetails = animeId => fetch(`${ANIME_DETAILS_URL}${animeId}`)
     response => response.json(),
   )
   .then(
-    response => response,
+    response => response.data,
   );
 
 export default getAnimeDetails;
