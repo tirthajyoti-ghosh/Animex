@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import getGenreList from '../API/getGenreList';
 import addGenreRow from '../store/actions/addGenreRow';
@@ -52,10 +53,10 @@ const GenreRow = ({
             </h2>
             <Slider {...sliderSettings}>
               { genreRow[genreName].map(anime => (
-                <a href={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
+                <Link to={`/anime/${anime.mal_id}`} className="anime" key={anime.mal_id}>
                   <img src={anime.images.webp.image_url} alt="" />
                   <span>{anime.title}</span>
-                </a>
+                </Link>
               )) }
             </Slider>
           </>
